@@ -31,6 +31,8 @@ export default function Editor() {
 		};
 
 		div.appendChild(script);
+
+		window.addEventListener("contextmenu", (e) => e.preventDefault());
 	}, []);
 
 	const { bpm } = useAppSelector((state) => state.editor);
