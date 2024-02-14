@@ -10,9 +10,9 @@ function getColumn(number) {
 
     let column = '';
     while (number > 0) {
-        const resto = (number - 1) % 26;
-        column = String.fromCharCode(resto + 65) + column;
-        number = Math.floor((number - resto - 1) / 26);
+        const rest = (number - 1) % 26;
+        column = String.fromCharCode(rest + 65) + column;
+        number = Math.floor((number - rest - 1) / 26);
     }
 
     return column;
@@ -34,7 +34,7 @@ export default function Light({ current = false, disabled = false, row, column }
 		<button
 			className={
 				twMerge(
-					`group flex items-center justify-center h-5 w-8 bg-gray-200/20 rounded-md my-1 text-xs text-gray-300/50 font-semibold`,
+					`group flex items-center justify-center h-5 w-8 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`,
 					(color !== "none") && colors[color].editor.default,
 					(current && color !== "none") && colors[color].editor.current,
 				)}

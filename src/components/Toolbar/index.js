@@ -2,10 +2,24 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { setCurrentBpm, setSelectedColor } from "@/lib/reducers/editor";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 
 export default function Toolbar() {
 	const dispatch = useAppDispatch();
 	const { colors, selectedColor, bpm } = useAppSelector((state) => state.editor);
+
+	useEffect(() => {
+		window.addEventListener("keydown", (e) => {
+			const key = e.key;
+			if (isNaN(parseInt(key))) return;
+			if (document.querySelector("input:focus")) return;
+
+			const colorName = Object.keys(colors)[parseInt(key) - 1];
+			if (colorName && selectedColor !== colorName && !colors[colorName].toolbar.unlisted) {
+				dispatch(setSelectedColor(colorName));
+			}
+		});
+	}, [dispatch, selectedColor]);
 
 	return (
 		<aside className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6">
@@ -26,7 +40,7 @@ export default function Toolbar() {
 				<div className="flex flex-col items-center mt-2">
 					<input
 						type="range"
-						min="0" max="1200" step="10"
+						min="1" max="1200" step="10"
 						className="w-full"
 						value={bpm}
 						onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
@@ -35,7 +49,7 @@ export default function Toolbar() {
 						Current BPM:
 						<input
 							type="number"
-							max="1200" min="0" step="10"
+							max="1200" min="1" step="10"
 							className="proportional-nums w-8 bg-transparent border-b-2 border-white/30 focus:border-emerald-400 transition-all outline-none text-center text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
 							value={bpm}
 							onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
@@ -53,10 +67,16 @@ export default function Toolbar() {
 						return (
 							<button
 								key={index}
-								className={`${selected ? colorData.toolbar.selected : colorData.toolbar.default} mx-auto flex items-center justify-center rounded-lg w-12 aspect-square transition-all`}
+								className={`relative ${selected ? colorData.toolbar.selected : colorData.toolbar.default} mx-auto flex items-center justify-center rounded-lg w-12 aspect-square transition-all`}
 								onClick={() => dispatch(setSelectedColor(color))}
 							>
 								{selected && <FontAwesomeIcon icon={faCheck} className="text-2xl drop-shadow-[0px_2px_1px_#000]" />}
+
+								{!selected && (
+									<span className="absolute bottom-0.5 left-1 text-xs">
+										{index + 1}
+									</span>
+								)}
 							</button>
 						);
 					})}
