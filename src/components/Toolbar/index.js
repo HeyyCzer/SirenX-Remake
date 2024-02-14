@@ -22,22 +22,22 @@ export default function Toolbar() {
 	}, [dispatch, selectedColor]);
 
 	return (
-		<aside className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6">
+		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6">
 			<div className="flex justify-center py-6 text-white uppercase font-medium">
 				<h1>Tool</h1>
 				<h1 className="text-gradient-primary font-semibold">Box</h1>
 			</div>
 
 			<div className="flex flex-col gap-y-1.5">
-				<button className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-white uppercase tracking-[2px] font-semibold rounded-lg text-sm py-1">Import</button>
-				<button className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1">Export</button>
+				<button id="toolbar-import" className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-white uppercase tracking-[2px] font-semibold rounded-lg text-sm py-1">Import</button>
+				<button id="toolbar-export" className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1">Export</button>
 			</div>
 
 			<div>
 				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Adjust BPM</h2>
 
 				{/* Slider */}
-				<div className="flex flex-col items-center mt-2">
+				<div id="toolbar-bpm" className="flex flex-col items-center mt-2">
 					<input
 						type="range"
 						min="1" max="1200" step="10"
@@ -61,7 +61,7 @@ export default function Toolbar() {
 			<div>
 				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Siren Colors</h2>
 
-				<div className="grid grid-cols-3 w-full gap-y-2 mt-4">
+				<div id="toolbar-colors" className="grid grid-cols-3 w-full gap-y-2 mt-4">
 					{Object.entries(colors).filter(([, colorData]) => !colorData.toolbar.unlisted).map(([color, colorData], index) => {
 						const selected = selectedColor === color;
 						return (
@@ -80,6 +80,29 @@ export default function Toolbar() {
 							</button>
 						);
 					})}
+				</div>
+			</div>
+
+			<div>
+				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Useful keybinds</h2>
+
+				<div id="toolbar-keybinds" className="flex flex-col gap-y-2 mt-4 text-gray-300 text-xs">
+					<div className="grid grid-cols-2 gap-x-2 items-center">
+						<kbd><kbd>Mouse Left</kbd></kbd>
+						<p>Draw color</p>
+					</div>
+					<div className="grid grid-cols-2 gap-x-2 items-center">
+						<kbd><kbd>Mouse Right</kbd></kbd>
+						<p>Erase color</p>
+					</div>
+					<div className="grid grid-cols-2 gap-x-2 items-center">
+						<kbd><kbd>0-9</kbd></kbd>
+						<p>Change color</p>
+					</div>
+					<div className="grid grid-cols-2 gap-x-2 items-center">
+						<kbd><kbd>Q</kbd></kbd>
+						<p>Create separator</p>
+					</div>
 				</div>
 			</div>
 		</aside>

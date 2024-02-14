@@ -10,6 +10,20 @@ a {
 	@apply outline-none;
 }
 
+kbd > kbd {
+	@apply 
+		rounded-[3px]
+		border-[1px]
+		border-gray-500/50
+		bg-gray-500/20 
+		text-gray-400 
+		font-medium
+		text-xs
+		w-fit 
+		inline-block
+		px-[4px] py-[1px];
+}
+
 @keyframes siren {
 	0%, 30%, 45% {
 		@apply text-white;

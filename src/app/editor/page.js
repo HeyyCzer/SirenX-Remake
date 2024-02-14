@@ -14,6 +14,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { twMerge } from "tailwind-merge";
 
 import { v4 as uuidv4 } from "uuid";
+import AppTutorial from "./editor.tutorial";
 
 export default function Editor() {
 	// Buy me a coffee widget
@@ -91,6 +92,8 @@ export default function Editor() {
 					<Separator key={index} uuid={separator.id} x={separator.x} moveSeparator={moveSeparator} />
 				))
 			}
+
+			<AppTutorial />
 
 			<div className={`${styles.background} min-h-screen px-12 py-9`}>
 				<div className="flex justify-between gap-x-6">

@@ -20,9 +20,12 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18",
+    "react-joyride": "^2.7.2",
     "react-redux": "^9.1.0",
+    "sass": "^1.70.0",
     "sharp": "^0.33.2",
     "tailwind-merge": "^2.2.1",
+    "tailwind-variants": "^0.2.0",
     "uuid": "^9.0.1",
     "xml2js": "^0.6.2"
   },
