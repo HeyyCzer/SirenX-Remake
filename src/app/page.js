@@ -89,19 +89,6 @@ export default function Home() {
 				<div className="grid grid-cols-4 gap-12">
 					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
 						<h1 className="text-[32px]">
-							⌛
-						</h1>
-
-						<h2 className="font-bold tracking-wider text-white">
-							Save your time
-						</h2>
-
-						<p className="text-white/60 mt-4">
-							We know how time-consuming it is to manually create/edit vehicle light patterns. <span className="text-white font-bold">SirenX</span> is here to save your time. You can edit your <kbd><kbd>carcols.meta</kbd></kbd> file in a few clicks, and download it back to your computer. Spend your time on more important things.
-						</p>
-					</div>
-					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
-						<h1 className="text-[32px]">
 							🧠
 						</h1>
 
@@ -111,6 +98,19 @@ export default function Home() {
 
 						<p className="text-white/60 mt-4">
 							We designed <span className="text-white font-bold">SirenX</span> to be as simple as possible, so you can use it without any hassle. You don&apos;t need to be an expert to use it: just open the editor, import your <kbd><kbd>carcols.meta</kbd></kbd> file, or just start creating a new one.
+						</p>
+					</div>
+					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+						<h1 className="text-[32px]">
+							⌛
+						</h1>
+
+						<h2 className="font-bold tracking-wider text-white">
+							Save your time
+						</h2>
+
+						<p className="text-white/60 mt-4">
+							We know how time-consuming it is to manually create/edit vehicle light patterns. <span className="text-white font-bold">SirenX</span> is here to save your time. You can edit your <kbd><kbd>carcols.meta</kbd></kbd> file in a few clicks, and download it back to your computer. Spend your time on more important things.
 						</p>
 					</div>
 					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
