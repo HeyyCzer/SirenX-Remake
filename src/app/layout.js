@@ -11,7 +11,7 @@ config.autoAddCss = false;
 export const metadata = {
 	metadataBase: new URL("https://sirenx.heyyczer.com"),
 	title: "SirenX - Make GTA V sirens easily",
-	description: "SirenX is a web-based and open-source application that allows you to create and edit your GTA V carcols.meta sirens with ease. What about save your time using a simple and intuitive interface?",
+	description: "SirenX is a web-based application that allows you to create and edit your GTA V carcols.meta sirens with ease. What about save your time using a simple and intuitive interface?",
 
 	openGraph: {
 		url: "https://sirenx.heyyczer.com",
