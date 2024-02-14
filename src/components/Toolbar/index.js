@@ -19,7 +19,7 @@ export default function Toolbar() {
 				dispatch(setSelectedColor(colorName));
 			}
 		});
-	}, [dispatch, selectedColor]);
+	}, [dispatch, colors, selectedColor]);
 
 	return (
 		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6">
