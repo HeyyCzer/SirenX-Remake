@@ -1,0 +1,37 @@
+import { useDrag } from "react-dnd";
+import { twMerge } from "tailwind-merge";
+
+export default function Separator({ uuid: id, x: itemX, moveSeparator }) {
+	const [{ isDragging }, drag] = useDrag(() => ({
+		type: "SEPARATOR",
+		item: { id },
+		end: (item, monitor) => {
+			console.log("End", item.id);
+
+			const delta = monitor.getDifferenceFromInitialOffset();
+			if (!delta) return;
+
+			console.log(itemX, delta.x);
+
+			const x = Math.round(itemX + delta.x);
+			moveSeparator(item.id, x);
+			return undefined;
+		},
+		collect: (monitor) => ({
+			isDragging: monitor.isDragging(),
+			handlerId: monitor.getHandlerId(),
+		}),
+	}));
+
+	return (
+		<div
+			ref={drag}
+			className="separator fixed h-screen px-2"
+			style={{ left: itemX }}
+		>
+			<div className={twMerge("h-[inherit] bg-white/30 w-1", (isDragging && "bg-red-500"))}>
+
+			</div>
+		</div>
+	);
+}
