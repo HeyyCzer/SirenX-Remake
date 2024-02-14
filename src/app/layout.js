@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
 
 				<footer className="py-4 bg-slate-900 flex flex-col justify-center items-center gap-4">
 					<p className="text-center text-gray-300/60 text-sm">
-						Made with <span className="text-white">❤️</span> by{" "}
+						Made with <span className="bg-clip-text bg-emerald-400 text-transparent animate-ping">💚</span> by{" "}
 						<Link href="https://bio.site/HeyyCzer" className="text-white font-bold underline underline-offset-2 hover:text-emerald-400 transition-all">HeyyCzer</Link>
 					</p>
 

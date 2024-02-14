@@ -46,6 +46,13 @@ kbd > kbd {
 	}
 }
 
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0.3;
+  }
+}
+
 .text-gradient-primary {
 	@apply bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent;
 }
