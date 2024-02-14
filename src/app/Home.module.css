@@ -1,0 +1,26 @@
+.heroContainer {
+	position: relative;
+	height: 90vh;
+	width: 100%;
+}
+
+.heroBackground {
+	position: absolute;
+	height: inherit;
+	width: inherit;
+
+	opacity: 0.2;
+	/* opacity: 0.2; */
+
+	z-index: -1;
+
+	filter: blur(20px);
+
+	background-repeat: no-repeat;
+	background-size: 100vw;
+	background-position: center center;
+}
+
+.heroCharacters {
+	mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
