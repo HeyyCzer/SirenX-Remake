@@ -17,8 +17,11 @@ export default function Home() {
 			const heroBackground = document.querySelector(`.${styles.heroBackground}`);
 			if (heroBackground) {	
 				const scroll = window.scrollY;
-				heroBackground.style.transform = `translateY(${scroll * 0.6}px)`;
-				// heroBackground.style.transform = `translateY(${scroll * 0.3}px)`;
+				const scrollMax = 260;
+
+				let target = scroll * 0.6;
+				if (target > scrollMax) target = scrollMax;
+				heroBackground.style.transform = `translateY(${target}px)`;
 			}
 		};
 
@@ -78,8 +81,65 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="features" className="py-16">
-				
+			<section id="features" className="py-16 px-12 xl:px-16">
+				<h2 className="text-3xl font-bold text-gray-400 text-center mb-12">
+					Why should you choose <span className="text-white mr-0.5">Siren<span className="text-gradient-primary">X</span></span>?
+				</h2>
+
+				<div className="grid grid-cols-4 gap-12">
+					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+						<h1 className="text-[32px]">
+							⌛
+						</h1>
+
+						<h2 className="font-bold tracking-wider text-white">
+							Save your time
+						</h2>
+
+						<p className="text-white/60 mt-4">
+							We know how time-consuming it is to manually create/edit vehicle light patterns. <span className="text-white font-bold">SirenX</span> is here to save your time. You can edit your <kbd><kbd>carcols.meta</kbd></kbd> file in a few clicks, and download it back to your computer. Spend your time on more important things.
+						</p>
+					</div>
+					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+						<h1 className="text-[32px]">
+							🧠
+						</h1>
+
+						<h2 className="font-bold tracking-wider text-white">
+							Easy to learn and use
+						</h2>
+
+						<p className="text-white/60 mt-4">
+							We designed <span className="text-white font-bold">SirenX</span> to be as simple as possible, so you can use it without any hassle. You don&apos;t need to be an expert to use it: just open the editor, import your <kbd><kbd>carcols.meta</kbd></kbd> file, or just start creating a new one.
+						</p>
+					</div>
+					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+						<h1 className="text-[32px]">
+							💰
+						</h1>
+
+						<h2 className="font-bold tracking-wider text-white">
+							Absolutely free
+						</h2>
+
+						<p className="text-white/60 mt-4">
+							We believe that everyone should have access to the best tools, so we made <span className="text-white font-bold">SirenX</span> absolutely free. You can use it as much as you want. If you like it, you can support us by sharing it with your friends or using the support button (on all pages footer or in the right-corner on the editor page)
+						</p>
+					</div>
+					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+						<h1 className="text-[32px]">
+							🔧
+						</h1>
+
+						<h2 className="font-bold tracking-wider text-white">
+							Advanced features
+						</h2>
+
+						<p className="text-white/60 mt-4">
+							In addition to colors, we provide other options to customize your patterns, such as: rotation, intensity and even multiples. We are constantly working on new features to make <span className="text-white font-bold">SirenX</span> even better. If you have any suggestions, feel free to contact us.
+						</p>
+					</div>
+				</div>
 			</section>
 		</main>
 	);
