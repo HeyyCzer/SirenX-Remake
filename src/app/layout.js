@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
 						<Link href="https://bio.site/HeyyCzer" className="text-white font-bold underline underline-offset-2 hover:text-emerald-400 transition-all">HeyyCzer</Link>
 					</p>
 
-					<Link href="https://www.buymeacoffee.com/heyyczer" target="_blank">
+					<Link href="https://www.buymeacoffee.com/heyyczer" target="_blank" rel="noopener noreferrer">
 						<Image
 							src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png"
 							alt="Buy Me A Coffee"
