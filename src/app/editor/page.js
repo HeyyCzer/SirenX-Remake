@@ -1,19 +1,17 @@
 "use client";
 
-import Separator from "@/components/Separator";
 import styles from "./Editor.module.css";
 
 import Light from "@/components/Light";
-import SeparatorDeleteDropZone from "@/components/Separator/deleteDropZone";
 import Toolbar from "@/components/Toolbar";
 import { useAppSelector } from "@/lib/hooks";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { twMerge } from "tailwind-merge";
 
-import { v4 as uuidv4 } from "uuid";
+import SeparatorsContainer from "@/components/SeparatorsContainer";
 import AppTutorial from "./editor.tutorial";
 
 export default function Editor() {
@@ -51,48 +49,18 @@ export default function Editor() {
 		return () => clearInterval(interval);
 	}, [bpm]);
 
-	const [separators, setSeparators] = useState([]);
 	useEffect(() => {
 		const preventContextMenu = (e) => e.preventDefault();
 		window.addEventListener("contextmenu", preventContextMenu);
 
-		const handleKeydown = (e) => {
-			if (e.key === "q") {
-				e.preventDefault();
-				setSeparators(separators => [...separators, { id: uuidv4(), x: window.innerWidth / 2 }]);
-			}
-		}
-		window.addEventListener("keydown", handleKeydown);
-		
 		return () => {
 			window.removeEventListener("contextmenu", preventContextMenu);
-			window.removeEventListener("keydown", handleKeydown);
 		}
 	}, []);
-
-	const removeSeparator = useCallback((id) => {
-		setSeparators(separators => separators.filter((separator) => separator.id !== id));
-	}, []);
-
-	const moveSeparator = useCallback((id, x) => {
-		const separator = separators.find((separator) => separator.id === id);
-		separator.x = x;
-		separator.id = uuidv4();
-
-		setSeparators(separators => [
-			...separators.filter((separator) => separator.id !== id),
-			separator,
-		]);
-	}, [separators]);
 
 	return (
 		<DndProvider backend={HTML5Backend}>
-			{
-				separators.map((separator, index) => (
-					<Separator key={index} uuid={separator.id} x={separator.x} moveSeparator={moveSeparator} />
-				))
-			}
-
+			<SeparatorsContainer />
 			<AppTutorial />
 
 			<div className={`${styles.background} min-h-screen px-12 py-9`}>
@@ -118,9 +86,6 @@ export default function Editor() {
 
 							<hr className="border-gray-300/30 w-1/2 mx-auto mt-2" />
 						</div>
-
-						{/* Editor */}
-						<SeparatorDeleteDropZone removeSeparator={removeSeparator} />
 
 						<div>
 							{Array(32)
