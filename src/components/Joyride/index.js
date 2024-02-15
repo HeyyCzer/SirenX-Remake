@@ -1,9 +1,14 @@
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 import { setStatus } from "@/lib/reducers/tutorial";
+import dynamic from "next/dynamic";
 import { useCallback, useEffect, useState } from "react";
-import ReactJoyride, { ACTIONS } from "react-joyride";
+import { ACTIONS } from "react-joyride";
 import { tv } from "tailwind-variants";
+
+const ReactJoyride = dynamic(() => import('react-joyride'), {
+	ssr: false,
+})
 
 const button = tv({
 	base: "py-1 px-2 transition-colors border-0 rounded-md text-white cursor-pointer outline-none appearance-none",
