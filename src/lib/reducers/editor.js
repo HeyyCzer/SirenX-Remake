@@ -12,6 +12,38 @@ const defaultLightModel = {
 const initialState = {
 	selectedColor: "red",
 	bpm: 600,
+	lights: [],
+
+	settings: {
+		separatorsVisible: {
+			label: "Show/hide separators",
+			description: "This will show the created separators.",
+			attributes: {
+				type: "checkbox",
+			},
+			value: true,
+		},
+		oneColorPerColumn: {
+			label: "Limit one color per column",
+			description: "This is useful for visualizing your pattern.",
+			negativeEffect: "By disabling this, you will not be able to export files.",
+			attributes: {
+				type: "checkbox",
+			},
+			value: true,
+		},
+		totalColumns: {
+			label: "Total of columns",
+			description: "This is the total rows of the editor. The maximum is 32.",
+			attributes: {
+				type: "range",
+				min: 20,
+				max: 32,
+			},
+			parseValue: (value) => parseInt(value),
+			value: 20,
+		}
+	},
 
 	colors: {
 		red: {
@@ -114,8 +146,6 @@ const initialState = {
 			}
 		},
 	},
-
-	lights: []
 }
 
 const editorSlice = createSlice({
@@ -128,6 +158,13 @@ const editorSlice = createSlice({
 		},
 		setSelectedColor: (state, { payload }) => {
 			state.selectedColor = payload;
+			return state;
+		},
+		updateSettings: (state, { payload: { key, value } }) => {
+			if (state.settings[key].parseValue) {
+				value = state.settings[key].parseValue(value);
+			}
+			state.settings[key].value = value;
 			return state;
 		},
 		updateLight: (state, { payload: { row, column, color } }) => {
@@ -147,6 +184,6 @@ const editorSlice = createSlice({
 	}
 });
 
-export const { setCurrentBpm, setSelectedColor, updateLight } = editorSlice.actions;
+export const { setCurrentBpm, setSelectedColor, updateSettings, updateLight } = editorSlice.actions;
 
 export default editorSlice.reducer;

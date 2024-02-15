@@ -38,13 +38,13 @@ export default function Editor() {
 		div.appendChild(script);
 	}, []);
 
-	const { bpm } = useAppSelector((state) => state.editor);
+	const { bpm, settings } = useAppSelector((state) => state.editor);
 
 	const [currentRow, setCurrentRow] = useState(0);
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrentRow((prev) => (prev + 1) % 32);
-		}, (60 / bpm) * 1000);
+		}, 1000 / (bpm / 60));
 
 		return () => clearInterval(interval);
 	}, [bpm]);
@@ -77,7 +77,7 @@ export default function Editor() {
 								<h2 className="text-gray-300/60 uppercase text-xs tracking-[2px] font-light text-center">Preview</h2>
 							</div>
 							<div className="flex gap-x-1 px-1">
-								{Array(32)
+								{Array(settings.totalColumns.value)
 									.fill()
 									.map((_, columnIndex) => (
 										<Light current={true} key={`preview-${columnIndex}`} disabled row={currentRow} column={columnIndex} />
@@ -92,7 +92,7 @@ export default function Editor() {
 								.fill()
 								.map((_, rowIndex) => (
 									<div className={twMerge(`flex gap-x-1 rounded-lg px-1`, (rowIndex === currentRow && "bg-white/10"))} key={rowIndex}>
-										{Array(32)
+										{Array(settings.totalColumns.value)
 											.fill()
 											.map((_, columnIndex) => (
 												<Light key={`${rowIndex}-${columnIndex}`} row={rowIndex} column={columnIndex} current={rowIndex === currentRow} />

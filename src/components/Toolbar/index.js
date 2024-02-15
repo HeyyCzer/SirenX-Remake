@@ -1,12 +1,13 @@
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { setCurrentBpm, setSelectedColor } from "@/lib/reducers/editor";
+import { setCurrentBpm, setSelectedColor, updateSettings } from "@/lib/reducers/editor";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
+import { twMerge } from "tailwind-merge";
 
 export default function Toolbar() {
 	const dispatch = useAppDispatch();
-	const { colors, selectedColor, bpm } = useAppSelector((state) => state.editor);
+	const { colors, settings, selectedColor, bpm } = useAppSelector((state) => state.editor);
 
 	useEffect(() => {
 		window.addEventListener("keydown", (e) => {
@@ -33,10 +34,10 @@ export default function Toolbar() {
 				<button id="toolbar-export" className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1">Export</button>
 			</div>
 
+			{/* BPM */}
 			<div>
 				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Adjust BPM</h2>
 
-				{/* Slider */}
 				<div id="toolbar-bpm" className="flex flex-col items-center mt-2">
 					<input
 						type="range"
@@ -45,12 +46,12 @@ export default function Toolbar() {
 						value={bpm}
 						onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
 					/>
-					<span className="mt-1 flex gap-x-2 text-white text-xs">
+					<span className="mt-1 flex gap-x-2 text-white text-xs items-center">
 						Current BPM:
 						<input
 							type="number"
 							max="1200" min="1" step="10"
-							className="proportional-nums w-8 bg-transparent border-b-2 border-white/30 focus:border-emerald-400 transition-all outline-none text-center text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+							className="proportional-nums py-0 px-0 bg-transparent border-0 border-b-2 border-white/30 focus:border-emerald-400 transition-all outline-none text-center text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:ring-0"
 							value={bpm}
 							onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
 						/>
@@ -58,6 +59,7 @@ export default function Toolbar() {
 				</div>
 			</div>
 
+			{/* COLORS */}
 			<div>
 				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Siren Colors</h2>
 
@@ -83,6 +85,41 @@ export default function Toolbar() {
 				</div>
 			</div>
 
+			{/* SETTINGS */}
+			<div>
+				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Settings</h2>
+
+				<div id="toolbar-settings" className="flex flex-col gap-y-2 mt-4 text-gray-300 text-xs">
+					{Object.entries(settings).filter(([, settingsData]) => !settingsData.unlisted).map(([settingsId, settingsData], index) => (
+						<div key={index} className="flex flex-col gap-y-1">
+							<div className="flex justify-between items-center gap-x-2">
+								<input
+									className={twMerge("text-emerald-400 rounded-md focus:ring-0 outline-none mt-1", (settingsData.attributes?.type === "range" && "w-full"))}
+									id={`settings-${settingsId}`}
+									checked={settingsData.value}
+									value={settingsData.value}
+									onChange={(e) => dispatch(updateSettings({ key: settingsId, value: e.target.value }))}
+									{...(settingsData.attributes ?? {})}
+								/>
+								{settingsData.attributes?.type === "range" && (
+									<span className="text-white text-xs">{settingsData.value}</span>
+								)}
+							</div>
+							<label htmlFor={`settings-${settingsId}`}>
+								<h5 className="text-white font-semibold text-sm">{settingsData.label}</h5>
+								{settingsData.description && (
+									<p>{settingsData.description}</p>
+								)}
+								{settingsData.negativeEffect && (
+									<p className="text-amber-500">{settingsData.negativeEffect}</p>
+								)}
+							</label>
+						</div>
+					))}
+				</div>
+			</div>
+
+			{/* KEYBINDS */}
 			<div>
 				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Useful keybinds</h2>
 
