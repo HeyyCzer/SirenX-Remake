@@ -47,7 +47,7 @@ export default function Toolbar() {
 				<div id="toolbar-bpm" className="flex flex-col items-center mt-2">
 					<input
 						type="range"
-						min="1" max="1200" step="10"
+						min="10" max="1200" step="10"
 						className="w-full accent-emerald-400"
 						value={bpm}
 						onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
@@ -56,10 +56,15 @@ export default function Toolbar() {
 						Current BPM:
 						<input
 							type="number"
-							max="1200" min="1" step="10"
+							max="1200" min="10" step="10"
 							className="proportional-nums py-0 px-0 bg-transparent border-0 border-b-2 border-white/30 focus:border-emerald-400 transition-all outline-none text-center text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:ring-0"
 							value={bpm}
-							onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
+							onChange={(e) => {
+								if (e.target.value < 10) e.target.value = 10;
+								if (e.target.value > 1200) e.target.value = 1200;
+
+								dispatch(setCurrentBpm(e.target.value))
+							}}
 						/>
 					</span>
 				</div>
