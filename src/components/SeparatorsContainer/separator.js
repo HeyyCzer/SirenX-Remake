@@ -6,12 +6,8 @@ export default function Separator({ uuid: id, x: itemX, moveSeparator }) {
 		type: "SEPARATOR",
 		item: { id },
 		end: (item, monitor) => {
-			console.log("End", item.id);
-
 			const delta = monitor.getDifferenceFromInitialOffset();
 			if (!delta) return;
-
-			console.log(itemX, delta.x);
 
 			const x = Math.round(itemX + delta.x);
 			moveSeparator(item.id, x);
