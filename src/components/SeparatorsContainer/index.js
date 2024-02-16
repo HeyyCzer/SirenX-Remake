@@ -1,9 +1,11 @@
+import { useAppSelector } from "@/lib/hooks";
 import { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import SeparatorDropZone from "./dropZone";
 import Separator from "./separator";
 
 export default function SeparatorsContainer() {
+	const { settings } = useAppSelector((state) => state.editor);
 	const [separators, setSeparators] = useState([]);
 
 	const removeSeparator = useCallback((id) => {
@@ -11,36 +13,40 @@ export default function SeparatorsContainer() {
 	}, []);
 
 	const moveSeparator = useCallback((id, x) => {
-		const separator = separators.find((separator) => separator.id === id);
+		const separator = { ...(separators.find((separator) => separator.id === id)) };
 		separator.x = x;
 		separator.id = uuidv4();
 
-		setSeparators(separators => [
+		setSeparators([
 			...separators.filter((separator) => separator.id !== id),
 			separator,
 		]);
 	}, [separators]);
 
 	useEffect(() => {
-		const handleKeydown = (e) => {
+		const handleKeyup = (e) => {
+			if (!settings.separatorsVisible.value) return;
+			if (document.querySelector("input:focus")) return;
+
 			if (e.key === "q") {
-				e.preventDefault();
 				setSeparators(separators => [...separators, { id: uuidv4(), x: window.innerWidth / 2 }]);
 			}
 		}
-		window.addEventListener("keydown", handleKeydown);
+		window.addEventListener("keyup", handleKeyup);
 		
 		return () => {
-			window.removeEventListener("keydown", handleKeydown);
+			window.removeEventListener("keyup", handleKeyup);
 		}
-	}, [])
+	}, [settings.separatorsVisible.value]);
 
 	return (
 		<>
 			{
-				separators.map((separator, index) => (
-					<Separator key={index} uuid={separator.id} x={separator.x} moveSeparator={moveSeparator} />
-				))
+				settings.separatorsVisible.value && (
+					separators.map((separator) => (
+						<Separator key={separator.id} uuid={separator.id} x={separator.x} moveSeparator={moveSeparator} />
+					))
+				)
 			}
 
 			<SeparatorDropZone removeSeparator={removeSeparator} />
