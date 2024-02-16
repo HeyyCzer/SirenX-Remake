@@ -2,8 +2,6 @@
 
 import styles from "./Editor.module.css";
 
-import Light from "@/components/Light";
-import Toolbar from "@/components/Toolbar";
 import { useAppSelector } from "@/lib/hooks";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -12,7 +10,11 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { twMerge } from "tailwind-merge";
 
 import SeparatorsContainer from "@/components/SeparatorsContainer";
+import dynamic from "next/dynamic";
 import AppTutorial from "./editor.tutorial";
+
+const Light = dynamic(() => import("@/components/Light"), { ssr: false });
+const Toolbar = dynamic(() => import("@/components/Toolbar"), { ssr: false });
 
 export default function Editor() {
 	// Buy me a coffee widget
@@ -38,7 +40,8 @@ export default function Editor() {
 		div.appendChild(script);
 	}, []);
 
-	const { bpm, settings } = useAppSelector((state) => state.editor);
+	const { bpm } = useAppSelector((state) => state.editor);
+	const settings = useAppSelector((state) => state.settings);
 
 	const [currentRow, setCurrentRow] = useState(0);
 	useEffect(() => {

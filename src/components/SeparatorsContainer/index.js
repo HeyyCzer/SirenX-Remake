@@ -5,7 +5,7 @@ import SeparatorDropZone from "./dropZone";
 import Separator from "./separator";
 
 export default function SeparatorsContainer() {
-	const { settings } = useAppSelector((state) => state.editor);
+	const settings = useAppSelector((state) => state.settings);
 	const [separators, setSeparators] = useState([]);
 
 	const removeSeparator = useCallback((id) => {

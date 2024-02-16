@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
-import { setStatus } from "@/lib/reducers/tutorial";
+import { setStatus } from "@/lib/reducers/tutorial.reducer";
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useState } from "react";
 import { ACTIONS } from "react-joyride";

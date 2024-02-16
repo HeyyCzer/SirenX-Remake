@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./fonts.css";
 import "./globals.css";
+import "./modals.css";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { config } from '@fortawesome/fontawesome-svg-core';

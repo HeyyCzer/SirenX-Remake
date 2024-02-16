@@ -1,5 +1,6 @@
+import { Colors } from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { updateLight } from "@/lib/reducers/editor";
+import { updateLight } from "@/lib/reducers/editor.reducer";
 
 import { twMerge } from "tailwind-merge";
 
@@ -26,7 +27,7 @@ export default function Light({ current = false, disabled = false, row, column }
 		dispatch(updateLight({ row, column, color }));
 	}
 
-	const { selectedColor, lights, colors } = useAppSelector((state) => state.editor);
+	const { selectedColor, lights } = useAppSelector((state) => state.editor);
 	const light = lights?.[row]?.[column];
 	const color = light?.color || "none";
 
@@ -35,12 +36,19 @@ export default function Light({ current = false, disabled = false, row, column }
 			className={
 				twMerge(
 					`group flex items-center justify-center h-5 w-8 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`,
-					(color !== "none") && colors[color].editor.default,
-					(current && color !== "none") && colors[color].editor.current,
+					(color !== "none") && Colors[color].editor.default,
+					(current && color !== "none") && Colors[color].editor.current,
 				)}
 			disabled={disabled}
 
-			onClick={() => handleClick(selectedColor)}
+			onMouseDown={() => {
+				e.preventDefault();
+				if (e.buttons === 1) {
+					handleClick(selectedColor);
+				} else if (e.buttons === 2) {
+					handleClick("none");
+				}
+			}}
 			onContextMenu={(e) => {
 				e.preventDefault();
 				handleClick("none");

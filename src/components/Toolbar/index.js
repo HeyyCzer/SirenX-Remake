@@ -1,13 +1,20 @@
+import { downloadFile, uploadFile } from "@/controllers/file.controller";
+import { Colors } from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { setCurrentBpm, setSelectedColor, updateSettings } from "@/lib/reducers/editor";
+import { Modal } from "@/lib/modal";
+import { setCurrentBpm, setSelectedColor } from "@/lib/reducers/editor.reducer";
+import { updateSettings } from "@/lib/reducers/settings.reducer";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function Toolbar() {
 	const dispatch = useAppDispatch();
-	const { colors, settings, selectedColor, bpm } = useAppSelector((state) => state.editor);
+	const { selectedColor, bpm, lights } = useAppSelector((state) => state.editor);
+	const settings = useAppSelector((state) => state.settings);
+
+	const hiddenFileInput = useRef(null);
 
 	useEffect(() => {
 		const handleKeypress = (e) => {
@@ -16,28 +23,89 @@ export default function Toolbar() {
 			const key = e.key;
 			if (isNaN(parseInt(key))) return;
 
-			const colorName = Object.keys(colors)[parseInt(key) - 1];
-			if (colorName && selectedColor !== colorName && !colors[colorName].toolbar.unlisted) {
+			const colorName = Object.keys(Colors)[parseInt(key) - 1];
+			if (colorName && selectedColor !== colorName && !Colors[colorName].toolbar.unlisted) {
 				dispatch(setSelectedColor(colorName));
 			}
 		}
 		window.addEventListener("keypress", handleKeypress);
 
+		const handleFileUpload = (e) => {
+			const file = e.target.files[0];
+			if (!file) return;
+
+			const reader = new FileReader();
+			reader.onload = (e) => {
+				const content = e.target.result;
+				uploadFile(content);
+			}
+			reader.readAsText(file);
+		}
+		hiddenFileInput.current.addEventListener("change", handleFileUpload);
+
 		return () => {
 			window.removeEventListener("keypress", handleKeypress);
 		}
-	}, [dispatch, colors, selectedColor]);
+	}, [dispatch, Colors, selectedColor, hiddenFileInput]);
+
+	const handleDownloadFile = useCallback(() => {
+		downloadFile(lights);
+	}, [lights]);
+
+	const handleResetEditor = useCallback(() => {
+		Modal.fire({
+			icon: "warning",
+			title: "Reset editor",
+			text: "Are you sure you want to reset the editor? This action cannot be undone.",
+			showCancelButton: true,
+		}).then(({ isConfirmed }) => {
+			if (!isConfirmed) return;
+
+			Modal.fire({
+				icon: "success",
+				title: "Editor reset",
+				text: "The editor has been reset successfully. You can now start a new project.",
+				showConfirmButton: false,
+				timer: 1500,
+				timerProgressBar: true,
+			}).then(() => {
+				localStorage.removeItem("SirenX/editor");
+				window.location.reload();
+			})
+		});
+	}, [lights]);
 
 	return (
 		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6">
+			<input type="file" ref={hiddenFileInput} className="hidden" accept=".meta" />
+
 			<div className="flex justify-center py-6 text-white uppercase font-medium">
 				<h1>Tool</h1>
 				<h1 className="text-gradient-primary font-semibold">Box</h1>
 			</div>
 
 			<div className="flex flex-col gap-y-1.5">
-				<button id="toolbar-import" className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-white uppercase tracking-[2px] font-semibold rounded-lg text-sm py-1">Import</button>
-				<button id="toolbar-export" className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1">Export</button>
+				<button
+					id="toolbar-import"
+					className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-white uppercase tracking-[2px] font-semibold rounded-lg text-sm py-1"
+					onClick={ () => hiddenFileInput.current.click() }
+				>
+					Import
+				</button>
+				<button
+					id="toolbar-export"
+					className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
+					onClick={ () => handleDownloadFile() }
+				>
+					Export
+				</button>
+				<button
+					id="toolbar-reset"
+					className="bg-gradient-to-r from-gray-500 to-gray-700 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
+					onClick={ () => handleResetEditor() }
+				>
+					Reset editor
+				</button>
 			</div>
 
 			{/* BPM */}
@@ -75,7 +143,7 @@ export default function Toolbar() {
 				<h2 className="text-center uppercase tracking-[2px] text-white text-sm">Siren Colors</h2>
 
 				<div id="toolbar-colors" className="grid grid-cols-3 w-full gap-y-2 mt-4">
-					{Object.entries(colors).filter(([, colorData]) => !colorData.toolbar.unlisted).map(([color, colorData], index) => {
+					{Object.entries(Colors).filter(([, colorData]) => !colorData.toolbar.unlisted).map(([color, colorData], index) => {
 						const selected = selectedColor === color;
 						return (
 							<button
