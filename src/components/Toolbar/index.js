@@ -10,16 +10,22 @@ export default function Toolbar() {
 	const { colors, settings, selectedColor, bpm } = useAppSelector((state) => state.editor);
 
 	useEffect(() => {
-		window.addEventListener("keydown", (e) => {
+		const handleKeypress = (e) => {
+			if (document.querySelector("input:focus")) return;
+
 			const key = e.key;
 			if (isNaN(parseInt(key))) return;
-			if (document.querySelector("input:focus")) return;
 
 			const colorName = Object.keys(colors)[parseInt(key) - 1];
 			if (colorName && selectedColor !== colorName && !colors[colorName].toolbar.unlisted) {
 				dispatch(setSelectedColor(colorName));
 			}
-		});
+		}
+		window.addEventListener("keypress", handleKeypress);
+
+		return () => {
+			window.removeEventListener("keypress", handleKeypress);
+		}
 	}, [dispatch, colors, selectedColor]);
 
 	return (
@@ -42,7 +48,7 @@ export default function Toolbar() {
 					<input
 						type="range"
 						min="1" max="1200" step="10"
-						className="w-full"
+						className="w-full accent-emerald-400"
 						value={bpm}
 						onChange={ (e) => dispatch(setCurrentBpm(e.target.value)) }
 					/>
@@ -94,7 +100,7 @@ export default function Toolbar() {
 						<div key={index} className="flex flex-col gap-y-1">
 							<div className="flex justify-between items-center gap-x-2">
 								<input
-									className={twMerge("text-emerald-400 rounded-md focus:ring-0 outline-none mt-1", (settingsData.attributes?.type === "range" && "w-full"))}
+									className={twMerge("accent-emerald-400 text-emerald-400 rounded-md focus:ring-0 outline-none mt-1", (settingsData.attributes?.type === "range" && "w-full"))}
 									id={`settings-${settingsId}`}
 									checked={settingsData.value}
 									value={settingsData.value}

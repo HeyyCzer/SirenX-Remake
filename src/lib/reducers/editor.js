@@ -40,7 +40,7 @@ const initialState = {
 				min: 20,
 				max: 32,
 			},
-			parseValue: (value) => parseInt(value),
+			type: "number",
 			value: 20,
 		}
 	},
@@ -161,9 +161,14 @@ const editorSlice = createSlice({
 			return state;
 		},
 		updateSettings: (state, { payload: { key, value } }) => {
-			if (state.settings[key].parseValue) {
-				value = state.settings[key].parseValue(value);
+			if (state.settings[key].attributes?.type === "checkbox") {
+				value = !(value === "true");
 			}
+
+			if (state.settings[key].type === "number") {
+				value = Number(value);
+			}
+
 			state.settings[key].value = value;
 			return state;
 		},
