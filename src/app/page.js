@@ -8,8 +8,10 @@ import Link from "next/link";
 import { useEffect } from "react";
 import styles from "./Home.module.css";
 
+import { AOSInit } from "@/components/AOSInit";
 import { faHourglass2 } from "@fortawesome/free-regular-svg-icons";
 import heroCharacters from "/public/images/home/characters.png";
+import screenshot from "/public/images/home/screenshot.png";
 
 export default function Home() {
 	useEffect(() => {
@@ -31,6 +33,8 @@ export default function Home() {
 
 	return (
 		<main className="min-h-screen">
+			<AOSInit />
+
 			<section className={ styles.heroContainer }>
 				<div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:pl-56 w-full z-50">
 					<span className="text-[13px] text-emerald-400 leading-none border border-emerald-400 rounded-full px-4 py-0.5">
@@ -81,13 +85,29 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="features" className="py-16 px-12 xl:px-16">
+			<section id="about" className="grid grid-cols-1 2xl:grid-cols-2 py-16 px-12 xl:px-20 gap-20">
+				<div>
+					<h2 data-aos="fade-left" data-aos-offset="150" className="text-3xl font-bold text-gray-400 text-center mb-12">
+						What is <span className="text-white mr-0.5">Siren<span className="text-gradient-primary">X</span></span>?
+					</h2>
+
+					<p data-aos="fade-left" className="text-white/60 text-xl text-center">
+						<span className="text-white font-bold">SirenX</span> is a web-based <span className="text-gradient-primary font-bold">carcols.meta</span> editor, designed to make it easier to create and edit vehicle light patterns for <span className="text-gradient-primary font-bold">Grand Theft Auto V</span> and <span className="text-gradient-primary font-bold">FiveM</span> servers. We offer a simple and intuitive interface, so you can create your patterns in a few clicks.
+					</p>
+				</div>
+
+				<div data-aos="fade-right" data-aos-offset="150" data-aos-delay="300" className="perspective-1000">
+					<Image src={ screenshot } alt="Screenshot" className="max-w-[600px] w-2/3 mx-auto rounded-lg 2xl:transform-style-3d 2xl:-rotate-y-[20deg] backface-hidden p-2 bg-gray-500/20 border border-gray-700/70"/>
+				</div>
+			</section>
+
+			<section id="features" className="py-16 px-12 xl:px-20">
 				<h2 className="text-3xl font-bold text-gray-400 text-center mb-12">
 					Why should you choose <span className="text-white mr-0.5">Siren<span className="text-gradient-primary">X</span></span>?
 				</h2>
 
-				<div className="grid grid-cols-4 gap-12">
-					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+				<div className="grid grid-cols-2 2xl:grid-cols-4 gap-12">
+					<div data-aos="fade-up" data-aos-delay="250" className="bg-gray-500/20 border border-gray-700/70 px-8 py-6 text-center h-auto rounded-lg">
 						<h1 className="text-[32px]">
 							🧠
 						</h1>
@@ -100,7 +120,7 @@ export default function Home() {
 							We designed <span className="text-white font-bold">SirenX</span> to be as simple as possible, so you can use it without any hassle. You don&apos;t need to be an expert to use it: just open the editor, import your <kbd><kbd>carcols.meta</kbd></kbd> file, or just start creating a new one.
 						</p>
 					</div>
-					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+					<div data-aos="fade-up" data-aos-delay="500" className="bg-gray-500/20 border border-gray-700/70 px-8 py-6 text-center h-auto rounded-lg">
 						<h1 className="text-[32px]">
 							⌛
 						</h1>
@@ -113,7 +133,7 @@ export default function Home() {
 							We know how time-consuming it is to manually create/edit vehicle light patterns. <span className="text-white font-bold">SirenX</span> is here to save your time. You can edit your <kbd><kbd>carcols.meta</kbd></kbd> file in a few clicks, and download it back to your computer. Spend your time on more important things.
 						</p>
 					</div>
-					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+					<div data-aos="fade-up" data-aos-delay="750" className="bg-gray-500/20 border border-gray-700/70 px-8 py-6 text-center h-auto rounded-lg">
 						<h1 className="text-[32px]">
 							💰
 						</h1>
@@ -126,7 +146,7 @@ export default function Home() {
 							We believe that everyone should have access to the best tools, so we made <span className="text-white font-bold">SirenX</span> absolutely free. You can use it as much as you want. If you like it, you can support us by sharing it with your friends or using the support button (on all pages footer or in the right-corner on the editor page)
 						</p>
 					</div>
-					<div className="bg-gray-500/20 border border-gray-700/50 px-8 py-6 text-center h-auto rounded-lg">
+					<div data-aos="fade-up" data-aos-delay="1000" className="bg-gray-500/20 border border-gray-700/70 px-8 py-6 text-center h-auto rounded-lg">
 						<h1 className="text-[32px]">
 							🔧
 						</h1>

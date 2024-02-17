@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: "class",
-	content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}", "./src/lib/**/*.{js,ts,jsx,tsx,mdx}"],
+	content: [
+		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/lib/**/*.{js,ts,jsx,tsx,mdx}"
+	],
 	theme: {
 		extend: {
 			animation: {
@@ -35,6 +39,7 @@ module.exports = {
 	},
 	plugins: [
 		require("@tailwindcss/forms"),
+		require("tailwindcss-3d"),
 		function ({ addBase, theme }) {
 			function extractColorVars(colorObj, colorGroup = "") {
 				return Object.keys(colorObj).reduce((vars, colorKey) => {

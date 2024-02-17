@@ -21,8 +21,11 @@ const Toolbar = dynamic(() => import("@/components/Toolbar"), { ssr: false });
 export default function Editor() {
 	// Buy me a coffee widget
 	useEffect(() => {
+		if (document.getElementById("bmc-script")) return;
+
 		const script = document.createElement("script");
 		const div = document.getElementById("supportByBMC");
+		script.setAttribute("id", "bmc-script");
 		script.setAttribute("src", "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js");
 		script.setAttribute("data-name", "BMC-Widget");
 		script.setAttribute("data-cfasync", "false");
