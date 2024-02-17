@@ -80,7 +80,7 @@ export default function Editor() {
 					columnColors[index] = item.color;
 				}
 
-				if (columnColors[index] && columnColors[index] !== item.color) {
+				if (item.color !== "none" && columnColors[index] && columnColors[index] !== item.color) {
 					newLights[rowIndex] = { ...newLights[rowIndex], [index]: { ...item, color: columnColors[index] } };
 				}
 			}
