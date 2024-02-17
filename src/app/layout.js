@@ -7,7 +7,10 @@ import "./modals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import dynamic from "next/dynamic";
 config.autoAddCss = false;
+
+const DarkReaderAPI = dynamic(() => import('@/components/DarkReaderAPI'), { ssr: false });
 
 export const metadata = {
 	metadataBase: new URL("https://sirenx.heyyczer.com"),
@@ -32,6 +35,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className="dark bg-slate-950">
+				<DarkReaderAPI />
 				<GoogleAnalytics />
 
 				{children}
