@@ -36,7 +36,7 @@ export default function Home() {
 			<AOSInit />
 
 			<section className={ styles.heroContainer }>
-				<div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:pl-56 w-full z-50">
+				<div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-0 xl:pl-56 w-full z-50 flex flex-col items-center xl:block">
 					<span className="text-[13px] text-emerald-400 leading-none border border-emerald-400 rounded-full px-4 py-0.5">
 						<FontAwesomeIcon icon={ faHourglass2 } className="mr-2" />
 						Save your time
@@ -46,7 +46,7 @@ export default function Home() {
 						<span className="text-white animate-siren2">X</span>
 					</h1>
 
-					<p className="mx-auto lg:mx-0 text-white/45 text-xl tracking-wide text-center lg:text-left">
+					<p className="text-white/45 text-xl tracking-wide text-center xl:text-left">
 						Ease, simplicity and time-saving. <br />
 						Your brand new and time-saving <span className="text-gradient-primary font-semibold">carcols.meta</span> editor.<br />
 					</p>
@@ -72,7 +72,7 @@ export default function Home() {
 				<Image
 					src={heroCharacters}
 					alt="Characters"
-					className={`absolute bottom-0 right-0 w-[900px] opacity-80 ${styles.heroCharacters}`}
+					className={`absolute bottom-0 right-0 w-[600px] 2xl:w-[900px] opacity-80 ${styles.heroCharacters} hidden xl:block`}
 				/>
 
 				<div className={ styles.heroBackground } style={{ background: `url(/images/home/bg.png)` }} suppressHydrationWarning />
@@ -87,16 +87,16 @@ export default function Home() {
 
 			<section id="about" className="grid grid-cols-1 2xl:grid-cols-2 py-16 px-12 xl:px-20 gap-20">
 				<div>
-					<h2 data-aos="fade-left" data-aos-offset="150" className="text-3xl font-bold text-gray-400 text-center mb-12">
+					<h2 data-aos="zoom-in" data-aos-offset="150" className="text-3xl font-bold text-gray-400 text-center mb-12">
 						What is <span className="text-white mr-0.5">Siren<span className="text-gradient-primary">X</span></span>?
 					</h2>
 
-					<p data-aos="fade-left" className="text-white/60 text-xl text-center">
+					<p data-aos="zoom-in" className="text-white/60 text-xl text-center">
 						<span className="text-white font-bold">SirenX</span> is a web-based <span className="text-gradient-primary font-bold">carcols.meta</span> editor, designed to make it easier to create and edit vehicle light patterns for <span className="text-gradient-primary font-bold">Grand Theft Auto V</span> and <span className="text-gradient-primary font-bold">FiveM</span> servers. We offer a simple and intuitive interface, so you can create your patterns in a few clicks.
 					</p>
 				</div>
 
-				<div data-aos="fade-right" data-aos-offset="150" data-aos-delay="300" className="perspective-1000">
+				<div data-aos="zoom-in" data-aos-offset="150" data-aos-delay="300" className="perspective-1000">
 					<Image src={ screenshot } alt="Screenshot" className="max-w-[600px] w-2/3 mx-auto rounded-lg 2xl:transform-style-3d 2xl:-rotate-y-[20deg] backface-hidden p-2 bg-gray-500/20 border border-gray-700/70"/>
 				</div>
 			</section>
