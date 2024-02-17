@@ -18,7 +18,7 @@ export const metadata = {
 		url: "https://sirenx.heyyczer.com",
 		locale: "pt_BR",
 		images: {
-			url: "/logo_512x512.png",
+			url: "/images/logo.png",
 			width: 256,
 			height: 256,
 		},
