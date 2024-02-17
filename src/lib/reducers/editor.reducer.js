@@ -12,6 +12,7 @@ const defaultLightModel = {
 
 const initialState = {
 	sirenId: null,
+	sirenName: "SirenX-GeneratedCarcols",
 	uploadedFile: DefaultCarcols,
 
 	selectedColor: "red",
@@ -26,8 +27,9 @@ const editorSlice = createSlice({
 	name: "editor",
 	initialState,
 	reducers: {
-		setUploadData: (state, { payload: { id, file } }) => {
+		setUploadData: (state, { payload: { id, name, file } }) => {
 			state.sirenId = id;
+			state.sirenName = name;
 			state.uploadedFile = file;
 			return state;
 		},

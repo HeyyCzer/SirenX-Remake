@@ -13,7 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function Toolbar() {
 	const dispatch = useAppDispatch();
-	const { selectedColor, bpm, lights, sirenId, uploadedFile } = useAppSelector((state) => state.editor);
+	const { selectedColor, bpm, lights, sirenId, sirenName, uploadedFile } = useAppSelector((state) => state.editor);
 	const settings = useAppSelector((state) => state.settings);
 
 	const hiddenFileInput = useRef(null);
@@ -32,35 +32,38 @@ export default function Toolbar() {
 		}
 		window.addEventListener("keypress", handleKeypress);
 
-		const handleFileUpload = (e) => {
-			const file = e.target.files[0];
-			if (!file) return;
-
-			const reader = new FileReader();
-			reader.onload = async (e) => {
-				const content = e.target.result;
-				const result = await uploadFile(content);
-				if (!result) return;
-
-				dispatch(updateLights(result.lights));
-				dispatch(setCurrentBpm(result.bpm));
-				dispatch(setUploadData({
-					id: result.id,
-					file: result.file,
-				}));
-			}
-			reader.readAsText(file);
-		}
-		hiddenFileInput.current.addEventListener("change", handleFileUpload);
-
 		return () => {
 			window.removeEventListener("keypress", handleKeypress);
 		}
-	}, [dispatch, selectedColor, hiddenFileInput]);
+	}, [dispatch, selectedColor]);
 
-	const handleDownloadFile = () => {
+	const handleFileUpload = useCallback((e) => {
+		const file = e.target.files[0];
+		if (!file) return;
+
+		const reader = new FileReader();
+		reader.onload = async (e) => {
+			const content = e.target.result;
+
+			hiddenFileInput.current.value = null;
+
+			const result = await uploadFile(content);
+			if (!result) return;
+
+			dispatch(updateLights(result.lights));
+			dispatch(setCurrentBpm(result.bpm));
+			dispatch(setUploadData({
+				id: result.id,
+				name: result.name,
+				file: result.file,
+			}));
+		}
+		reader.readAsText(file);
+	}, [hiddenFileInput]);
+
+	const handleDownloadFile = useCallback(() => {
 		Modal.fire({
-			title: "Enter the siren ID",
+			title: "Enter the Siren ID",
 			input: "number",
 			inputAttributes: {
 				min: 100,
@@ -71,15 +74,32 @@ export default function Toolbar() {
 		}).then(({ isConfirmed, value: newSirenId }) => {
 			if (!isConfirmed) return;
 			
-			const fileContent = downloadFile({ sirenId, newSirenId, uploadedFile, lights, bpm }, settings, `${uuidv4()}.meta`);
-			if (!fileContent) return;
+			Modal.fire({
+				title: "Enter the Siren Name",
+				input: "text",
+				inputValue: sirenName,
+				inputPlaceholder: "Siren name",
+			}).then(({ isConfirmed, value: newSirenName }) => {
+				if (!isConfirmed) return;
+			
+				const fileContent = downloadFile({
+					sirenId,
+					newSirenId,
+					newSirenName,
+					uploadedFile,
+					lights,
+					bpm
+				}, settings, `${uuidv4()}.meta`);
+				if (!fileContent) return;
 
-			dispatch(setUploadData({
-				id: newSirenId,
-				file: fileContent
-			}));
+				dispatch(setUploadData({
+					id: newSirenId,
+					name: newSirenName,
+					file: fileContent
+				}));
+			});
 		});
-	};
+	}, []);
 
 	const handleResetEditor = useCallback(() => {
 		Modal.fire({
@@ -106,7 +126,7 @@ export default function Toolbar() {
 
 	return (
 		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6 pb-6">
-			<input type="file" ref={hiddenFileInput} className="hidden" accept=".meta" />
+			<input type="file" ref={hiddenFileInput} className="hidden" accept=".meta" onChange={ handleFileUpload } />
 
 			<div className="flex justify-center py-6 text-white uppercase font-medium">
 				<h1>Tool</h1>
@@ -176,19 +196,21 @@ export default function Toolbar() {
 					{Object.entries(Colors).filter(([, colorData]) => !colorData.toolbar.unlisted).map(([color, colorData], index) => {
 						const selected = selectedColor === color;
 						return (
-							<button
-								key={index}
-								className={`relative ${selected ? colorData.toolbar.selected : colorData.toolbar.default} mx-auto flex items-center justify-center rounded-lg w-12 aspect-square transition-all`}
-								onClick={() => dispatch(setSelectedColor(color))}
-							>
-								{selected && <FontAwesomeIcon icon={faCheck} className="text-2xl drop-shadow-[0px_2px_1px_#000]" />}
+							<div key={index} className="flex flex-col items-center text-white text-xs">
+								<button
+									className={`relative ${selected ? colorData.toolbar.selected : colorData.toolbar.default} mx-auto flex items-center justify-center rounded-lg w-12 aspect-square transition-all`}
+									onClick={() => dispatch(setSelectedColor(color))}
+								>
+									{selected && <FontAwesomeIcon icon={faCheck} className="text-2xl drop-shadow-[0px_2px_1px_#000]" />}
 
-								{!selected && (
-									<span className="absolute bottom-0.5 left-1 text-xs">
-										{index + 1}
-									</span>
-								)}
-							</button>
+									{!selected && (
+										<span className="absolute bottom-0.5 left-1 text-xs">
+											{index + 1}
+										</span>
+									)}
+								</button>
+								{colorData.toolbar.name}
+							</div>
 						);
 					})}
 				</div>

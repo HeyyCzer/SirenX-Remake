@@ -50,6 +50,7 @@ const buildLights = (sirenSelected, fullFile) => {
 	return {
 		bpm: sirenSelected.sequencerBpm.$.value,
 		id: sirenSelected.id.$.value,
+		name: sirenSelected.name._text,
 		file: fullFile,
 		lights: builtSirens,
 	};
@@ -66,6 +67,7 @@ const exportLights = (editor, settings) => {
 	}
 
 	siren.id.$.value = editor.newSirenId;
+	siren.name._text = editor.newSirenName;
 	siren.sequencerBpm.$.value = editor.bpm;
 
 	let sequencer = {};

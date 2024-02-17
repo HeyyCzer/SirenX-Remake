@@ -55,10 +55,10 @@ const createColor = (carcolsColor) => {
 	`;
 	document.head.appendChild(style);
 
-	const totalCustoms = Object.keys(Colors).filter((color) => color.startsWith("Custom_")).length;
+	const totalCustoms = Object.keys(Colors).filter((color) => color.includes("CUSTOM")).length;
 	Colors[key] = {
 		toolbar: {
-			name: `C-${totalCustoms}`,
+			name: `Custom ${totalCustoms + 1}`,
 			default: `bg-${key} hover:bg-${key}`,
 			selected: `active-bg-${key}`,
 		},
