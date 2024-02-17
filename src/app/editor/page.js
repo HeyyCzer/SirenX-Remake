@@ -9,8 +9,9 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { twMerge } from "tailwind-merge";
 
+import ColumnSettingsDropdown from "@/components/ColumnSettingsDropdown";
 import SeparatorsContainer from "@/components/SeparatorsContainer";
-import { updateLights } from "@/lib/reducers/editor.reducer";
+import { defaultLightModel, updateLights } from "@/lib/reducers/editor.reducer";
 import dynamic from "next/dynamic";
 import AppTutorial from "./editor.tutorial";
 
@@ -120,6 +121,13 @@ export default function Editor() {
 						</div>
 
 						<div>
+							<div className={twMerge(`flex gap-x-1 justify-around rounded-lg px-1`)}>
+								{Array(settings.totalColumns.value)
+									.fill()
+									.map((_, columnIndex) => (
+											<ColumnSettingsDropdown key={columnIndex} columnIndex={columnIndex} data={lights?.[0]?.[columnIndex] || defaultLightModel} />
+										))}
+							</div>
 							{Array(32)
 								.fill()
 								.map((_, rowIndex) => (

@@ -5,18 +5,18 @@ import { updateLight } from "@/lib/reducers/editor.reducer";
 import { twMerge } from "tailwind-merge";
 
 function getColumn(number) {
-    if (number <= 0 || !Number.isInteger(number)) {
-        return;
-    }
+	if (number <= 0 || !Number.isInteger(number)) {
+		return;
+	}
 
-    let column = '';
-    while (number > 0) {
-        const rest = (number - 1) % 26;
-        column = String.fromCharCode(rest + 65) + column;
-        number = Math.floor((number - rest - 1) / 26);
-    }
+	let column = "";
+	while (number > 0) {
+		const rest = (number - 1) % 26;
+		column = String.fromCharCode(rest + 65) + column;
+		number = Math.floor((number - rest - 1) / 26);
+	}
 
-    return column;
+	return column;
 }
 
 export default function Light({ current = false, disabled = false, row, column }) {
@@ -28,21 +28,15 @@ export default function Light({ current = false, disabled = false, row, column }
 	const handleClick = (color) => {
 		if (disabled) return;
 		dispatch(updateLight({ row, column, color, settings }));
-	}
+	};
 
 	const light = lights?.[row]?.[column];
 	const color = light?.color || "none";
 
 	return (
 		<button
-			className={
-				twMerge(
-					`group flex items-center justify-center h-5 w-8 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`,
-					(color !== "none") && Colors[color]?.editor?.default,
-					(current && color !== "none") && Colors[color]?.editor?.current,
-				)}
+			className={twMerge(`group flex items-center justify-center h-5 w-8 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`, color !== "none" && Colors[color]?.editor?.default, current && color !== "none" && Colors[color]?.editor?.current)}
 			disabled={disabled}
-
 			onMouseDown={(e) => {
 				e.preventDefault();
 				if (e.buttons === 1) {
@@ -55,7 +49,6 @@ export default function Light({ current = false, disabled = false, row, column }
 				e.preventDefault();
 				handleClick("none");
 			}}
-
 			onMouseEnter={(e) => {
 				e.preventDefault();
 				if (e.buttons === 1) {
@@ -67,8 +60,7 @@ export default function Light({ current = false, disabled = false, row, column }
 		>
 			{!disabled && (
 				<span className="hidden group-hover:block text-[10px]">
-					{ getColumn(row + 1) }{' '}
-					{ (column + 1) }
+					{getColumn(row + 1)} {column + 1}
 				</span>
 			)}
 		</button>

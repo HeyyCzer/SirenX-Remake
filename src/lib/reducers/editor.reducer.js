@@ -1,21 +1,25 @@
 import DeltaEnum from "@/enum/rotation.enum";
+import DefaultCarcols from "/public/default_carcols.json";
 
 const { createSlice } = require("@reduxjs/toolkit")
 
 const defaultLightModel = {
 	color: "none",
-	rotation: DeltaEnum.FRONT,
+	rotation: DeltaEnum.FRONT.delta,
 	multiples: 1,
 	intensity: 3.50000000,
 }
 
 const initialState = {
 	sirenId: null,
-	uploadedFile: null,
+	uploadedFile: DefaultCarcols,
 
 	selectedColor: "red",
 	bpm: 600,
-	lights: [],
+	lights: Array(32).fill()
+		.map(() => 
+			Array(20).fill(defaultLightModel)
+		),
 }
 
 const editorSlice = createSlice({
@@ -65,5 +69,7 @@ const editorSlice = createSlice({
 });
 
 export const { setUploadData, setCurrentBpm, setSelectedColor, updateLight, updateLights } = editorSlice.actions;
+
+export { defaultLightModel };
 
 export default editorSlice.reducer;

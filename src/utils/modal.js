@@ -9,13 +9,13 @@ export const Modal = ReactSwal.mixin({
 	confirmButtonText: (
 		<>
 			<FontAwesomeIcon icon={faCheck} />
-			<span className="ml-1">Confirmar</span>
+			<span className="ml-1">Confirm</span>
 		</>
 	),
 	cancelButtonText: (
 		<>
 			<FontAwesomeIcon icon={faXmark} />
-			<span className="ml-1">Cancelar</span>
+			<span className="ml-1">Cancel</span>
 		</>
 	),
 });

@@ -1,17 +1,19 @@
 import { downloadFile, uploadFile } from "@/controllers/file.controller";
 import Colors from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { Modal } from "@/lib/modal";
 import { setCurrentBpm, setSelectedColor, setUploadData, updateLights } from "@/lib/reducers/editor.reducer";
 import { updateSettings } from "@/lib/reducers/settings.reducer";
+import { Modal } from "@/utils/modal";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCallback, useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
+import { v4 as uuidv4 } from "uuid";
+
 export default function Toolbar() {
 	const dispatch = useAppDispatch();
-	const { selectedColor, bpm, lights } = useAppSelector((state) => state.editor);
+	const { selectedColor, bpm, lights, sirenId, uploadedFile } = useAppSelector((state) => state.editor);
 	const settings = useAppSelector((state) => state.settings);
 
 	const hiddenFileInput = useRef(null);
@@ -56,9 +58,28 @@ export default function Toolbar() {
 		}
 	}, [dispatch, selectedColor, hiddenFileInput]);
 
-	const handleDownloadFile = useCallback(() => {
-		downloadFile(lights);
-	}, [lights]);
+	const handleDownloadFile = () => {
+		Modal.fire({
+			title: "Enter the siren ID",
+			input: "number",
+			inputAttributes: {
+				min: 100,
+				max: 99999,
+			},
+			inputValue: sirenId,
+			inputPlaceholder: "Siren ID",
+		}).then(({ isConfirmed, value: newSirenId }) => {
+			if (!isConfirmed) return;
+			
+			const fileContent = downloadFile({ sirenId, newSirenId, uploadedFile, lights, bpm }, settings, `${uuidv4()}.meta`);
+			if (!fileContent) return;
+
+			dispatch(setUploadData({
+				id: newSirenId,
+				file: fileContent
+			}));
+		});
+	};
 
 	const handleResetEditor = useCallback(() => {
 		Modal.fire({
