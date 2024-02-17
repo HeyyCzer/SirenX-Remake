@@ -32,7 +32,7 @@ export default function Home() {
 	return (
 		<main className="min-h-screen">
 			<section className={ styles.heroContainer }>
-				<div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:pl-56 w-full">
+				<div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:pl-56 w-full z-50">
 					<span className="text-[13px] text-emerald-400 leading-none border border-emerald-400 rounded-full px-4 py-0.5">
 						<FontAwesomeIcon icon={ faHourglass2 } className="mr-2" />
 						Save your time

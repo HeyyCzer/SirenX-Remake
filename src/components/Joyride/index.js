@@ -68,8 +68,12 @@ export default function Tutorial({ uid, dependent, steps, callback: tutorialCall
 	}
 
 	useEffect(() => {
-		if (!uid)
-			return setShowTutorial(true);
+		if (!uid) {
+			setTimeout(() => {
+				setShowTutorial(true);
+			}, 3000);
+			return;
+		}
 
 		if (dependent) {
 			const dependentTutorial = tutorialState[dependent]
@@ -81,7 +85,9 @@ export default function Tutorial({ uid, dependent, steps, callback: tutorialCall
 
 		const tutorial = tutorialState[uid];
 		if (!tutorial) {
-			setShowTutorial(true);
+			setTimeout(() => {
+				setShowTutorial(true);
+			}, 3000);
 			return;
 		}
 	}, [dispatch, tutorialState, uid, dependent]);

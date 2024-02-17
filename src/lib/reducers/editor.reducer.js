@@ -35,7 +35,7 @@ const editorSlice = createSlice({
 			state.selectedColor = payload;
 			return state;
 		},
-		updateLight: (state, { payload: { row, column, color } }) => {
+		updateLight: (state, { payload: { row, column, color, settings } }) => {
 			if (!state.lights[row]) {
 				state.lights[row] = [];
 			}
@@ -44,14 +44,26 @@ const editorSlice = createSlice({
 				state.lights[row][column] = defaultLightModel;
 			}
 
+			if (settings.oneColorPerColumn.value) {
+				for (const row of Object.values(state.lights)) {
+					if (row[column]?.color && row[column]?.color !== color && color !== "none" && row[column]?.color !== "none") {
+						row[column].color = color;
+					}
+				}
+			}
+
 			const light = { ...state.lights[row][column] };
 			light.color = color;
 			state.lights[row][column] = light;
+			return state;
+		},
+		updateLights: (state, { payload: lights }) => {
+			state.lights = lights;
 			return state;
 		}
 	}
 });
 
-export const { setUploadData, setCurrentBpm, setSelectedColor, updateLight } = editorSlice.actions;
+export const { setUploadData, setCurrentBpm, setSelectedColor, updateLight, updateLights } = editorSlice.actions;
 
 export default editorSlice.reducer;

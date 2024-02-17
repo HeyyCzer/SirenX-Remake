@@ -1,9 +1,21 @@
+import { createColor } from "@/controllers/colors.controller";
 import { configureStore } from "@reduxjs/toolkit";
 import editorSlice from "./reducers/editor.reducer";
 import settingsSlice from "./reducers/settings.reducer";
 import tutorialSlice from "./reducers/tutorial.reducer";
 
 export const makeStore = () => {
+	const preloadedEditor = typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`SirenX/editor`)) ?? undefined) : undefined;
+	if (preloadedEditor) {
+		for (const row of preloadedEditor.lights) {
+			for (const item of row ?? []) {
+				if (item?.color?.startsWith("CUSTOM_")) {
+					createColor(item.color.replace("CUSTOM_", ""))
+				}
+			}
+		}
+	}
+
 	const store = configureStore({
 		reducer: {
 			editor: editorSlice,
@@ -11,7 +23,7 @@ export const makeStore = () => {
 			tutorial: tutorialSlice,
 		},
 		preloadedState: {
-			editor: typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`SirenX/editor`)) ?? undefined) : undefined,
+			editor: preloadedEditor ?? undefined,
 			tutorial: typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`SirenX/tutorial`)) ?? undefined) : undefined,
 		}
 	});

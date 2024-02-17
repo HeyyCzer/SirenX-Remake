@@ -1,4 +1,4 @@
-import { Colors } from "@/lib/colors";
+import Colors from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { updateLight } from "@/lib/reducers/editor.reducer";
 
@@ -22,12 +22,14 @@ function getColumn(number) {
 export default function Light({ current = false, disabled = false, row, column }) {
 	const dispatch = useAppDispatch();
 
+	const { selectedColor, lights } = useAppSelector((state) => state.editor);
+	const settings = useAppSelector((state) => state.settings);
+
 	const handleClick = (color) => {
 		if (disabled) return;
-		dispatch(updateLight({ row, column, color }));
+		dispatch(updateLight({ row, column, color, settings }));
 	}
 
-	const { selectedColor, lights } = useAppSelector((state) => state.editor);
 	const light = lights?.[row]?.[column];
 	const color = light?.color || "none";
 
@@ -36,12 +38,12 @@ export default function Light({ current = false, disabled = false, row, column }
 			className={
 				twMerge(
 					`group flex items-center justify-center h-5 w-8 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`,
-					(color !== "none") && Colors[color].editor.default,
-					(current && color !== "none") && Colors[color].editor.current,
+					(color !== "none") && Colors[color]?.editor?.default,
+					(current && color !== "none") && Colors[color]?.editor?.current,
 				)}
 			disabled={disabled}
 
-			onMouseDown={() => {
+			onMouseDown={(e) => {
 				e.preventDefault();
 				if (e.buttons === 1) {
 					handleClick(selectedColor);

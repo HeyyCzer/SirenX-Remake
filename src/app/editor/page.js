@@ -2,7 +2,7 @@
 
 import styles from "./Editor.module.css";
 
-import { useAppSelector } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DndProvider } from "react-dnd";
@@ -10,6 +10,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { twMerge } from "tailwind-merge";
 
 import SeparatorsContainer from "@/components/SeparatorsContainer";
+import { updateLights } from "@/lib/reducers/editor.reducer";
 import dynamic from "next/dynamic";
 import AppTutorial from "./editor.tutorial";
 
@@ -40,7 +41,8 @@ export default function Editor() {
 		div.appendChild(script);
 	}, []);
 
-	const { bpm } = useAppSelector((state) => state.editor);
+	const dispatch = useAppDispatch();
+	const { bpm, lights } = useAppSelector((state) => state.editor);
 	const settings = useAppSelector((state) => state.settings);
 
 	const [currentRow, setCurrentRow] = useState(0);
@@ -61,6 +63,33 @@ export default function Editor() {
 		}
 	}, []);
 
+	useEffect(() => {
+		if (!settings.oneColorPerColumn.value) return;
+	
+		const newLights = { ...lights };
+
+		const columnColors = [];
+		for (const rowIndex in lights) {
+			const row = lights[rowIndex];
+			for (const index in row ?? []) {
+				const item = row[index];
+				if (!item) continue;
+
+				if (!columnColors[index] && item.color !== "none") {
+					columnColors[index] = item.color;
+				}
+
+				if (columnColors[index] && columnColors[index] !== item.color) {
+					newLights[rowIndex] = { ...newLights[rowIndex], [index]: { ...item, color: columnColors[index] } };
+				}
+			}
+		}
+
+		if (JSON.stringify(newLights) !== JSON.stringify(lights)) {
+			dispatch(updateLights(newLights));
+		}
+	}, [dispatch, settings.oneColorPerColumn.value, lights]);
+
 	return (
 		<DndProvider backend={HTML5Backend}>
 			<SeparatorsContainer />
@@ -69,7 +98,7 @@ export default function Editor() {
 			<div className={`${styles.background} min-h-screen px-12 py-9`}>
 				<div className="flex justify-between gap-x-6">
 					<main className="flex flex-col gap-y-6 w-fit mx-auto">
-						<Link href="/" className="text-2xl text-white font-bold upper">
+						<Link href="/" className="text-2xl text-white font-bold upper w-fit">
 							Siren
 							<span className="text-gradient-primary">X</span>
 						</Link>

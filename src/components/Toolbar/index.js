@@ -1,8 +1,8 @@
 import { downloadFile, uploadFile } from "@/controllers/file.controller";
-import { Colors } from "@/lib/colors";
+import Colors from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { Modal } from "@/lib/modal";
-import { setCurrentBpm, setSelectedColor } from "@/lib/reducers/editor.reducer";
+import { setCurrentBpm, setSelectedColor, setUploadData, updateLights } from "@/lib/reducers/editor.reducer";
 import { updateSettings } from "@/lib/reducers/settings.reducer";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,9 +35,17 @@ export default function Toolbar() {
 			if (!file) return;
 
 			const reader = new FileReader();
-			reader.onload = (e) => {
+			reader.onload = async (e) => {
 				const content = e.target.result;
-				uploadFile(content);
+				const result = await uploadFile(content);
+				if (!result) return;
+
+				dispatch(updateLights(result.lights));
+				dispatch(setCurrentBpm(result.bpm));
+				dispatch(setUploadData({
+					id: result.id,
+					file: result.file,
+				}));
 			}
 			reader.readAsText(file);
 		}
@@ -46,7 +54,7 @@ export default function Toolbar() {
 		return () => {
 			window.removeEventListener("keypress", handleKeypress);
 		}
-	}, [dispatch, Colors, selectedColor, hiddenFileInput]);
+	}, [dispatch, selectedColor, hiddenFileInput]);
 
 	const handleDownloadFile = useCallback(() => {
 		downloadFile(lights);
@@ -73,10 +81,10 @@ export default function Toolbar() {
 				window.location.reload();
 			})
 		});
-	}, [lights]);
+	}, []);
 
 	return (
-		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6">
+		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6 pb-6">
 			<input type="file" ref={hiddenFileInput} className="hidden" accept=".meta" />
 
 			<div className="flex justify-center py-6 text-white uppercase font-medium">
@@ -94,14 +102,15 @@ export default function Toolbar() {
 				</button>
 				<button
 					id="toolbar-export"
-					className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
+					disabled={!settings.oneColorPerColumn.value}
+					className="bg-gradient-to-r from-orange-500 to-yellow-500 disabled:from-gray-500 disabled:to-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
 					onClick={ () => handleDownloadFile() }
 				>
 					Export
 				</button>
 				<button
 					id="toolbar-reset"
-					className="bg-gradient-to-r from-gray-500 to-gray-700 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
+					className="bg-gradient-to-r from-red-600 to-red-800 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
 					onClick={ () => handleResetEditor() }
 				>
 					Reset editor

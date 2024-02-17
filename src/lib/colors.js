@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
 	red: {
 		toolbar: {
 			name: "Red",
@@ -8,6 +8,9 @@ export const Colors = {
 		editor: {
 			default: "bg-red-500/50",
 			current: "bg-red-500 drop-shadow-[0px_0px_10px_#ff0000]",
+		},
+		carcols: {
+			color: "0xFFFF0000",
 		}
 	},
 	blue: {
@@ -19,6 +22,9 @@ export const Colors = {
 		editor: {
 			default: "bg-blue-500/50",
 			current: "bg-blue-500 drop-shadow-[0px_0px_10px_#0000ff]",
+		},
+		carcols: {
+			color: "0xFF0000FF",
 		}
 	},
 	white: {
@@ -30,6 +36,9 @@ export const Colors = {
 		editor: {
 			default: "bg-white/50",
 			current: "bg-white drop-shadow-[0px_0px_10px_#ffffff]",
+		},
+		carcols: {
+			color: "0xFFFFFFFF",
 		}
 	},
 	amber: {
@@ -41,6 +50,9 @@ export const Colors = {
 		editor: {
 			default: "bg-amber-500/50",
 			current: "bg-amber-500 drop-shadow-[0px_0px_10px_#ffbf00]",
+		},
+		carcols: {
+			color: "0xFFFFBF00",
 		}
 	},
 	purple: {
@@ -52,6 +64,9 @@ export const Colors = {
 		editor: {
 			default: "bg-purple-500/50",
 			current: "bg-purple-500 drop-shadow-[0px_0px_10px_#800080]",
+		},
+		carcols: {
+			color: "0xFF800080",
 		}
 	},
 	green: {
@@ -63,6 +78,9 @@ export const Colors = {
 		editor: {
 			default: "bg-green-500/50",
 			current: "bg-green-500 drop-shadow-[0px_0px_10px_#008000]",
+		},
+		carcols: {
+			color: "0xFF008000",
 		}
 	},
 	lightBlue: {
@@ -74,6 +92,9 @@ export const Colors = {
 		editor: {
 			default: "bg-blue-400/50",
 			current: "bg-blue-400 drop-shadow-[0px_0px_10px_#0000ff]",
+		},
+		carcols: {
+			color: "0xFF0000FF",
 		}
 	},
 	pink: {
@@ -85,6 +106,9 @@ export const Colors = {
 		editor: {
 			default: "bg-pink-500/50",
 			current: "bg-pink-500 drop-shadow-[0px_0px_10px_#ff00ff]",
+		},
+		carcols: {
+			color: "0xFFFF00FF",
 		}
 	},
 	_fallback: {
@@ -94,6 +118,9 @@ export const Colors = {
 		editor: {
 			default: "border border-emerald-400/50 animate-pulse",
 			current: "border border-emerald-400/50 animate-pulse",
+		},
+		carcols: {
+			color: "0xFF00FF00",
 		}
 	},
 	none: {
@@ -103,6 +130,11 @@ export const Colors = {
 		editor: {
 			default: "bg-gray-200/20",
 			current: "bg-gray-200/20",
+		},
+		carcols: {
+			color: "0x00000000",
 		}
 	},
 }
+
+export default Colors;
