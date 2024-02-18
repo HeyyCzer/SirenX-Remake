@@ -156,7 +156,7 @@ export default function Home() {
 						</h2>
 
 						<p className="text-white/60 mt-4">
-							In addition to colors, we provide other options to customize your patterns, such as: rotation, intensity and even multiples. We are constantly working on new features to make <span className="text-white font-bold">SirenX</span> even better. If you have any suggestions, feel free to contact us.
+							In addition to colors, we provide other options to customize your patterns, such as: direction, intensity and even multiples. We are constantly working on new features to make <span className="text-white font-bold">SirenX</span> even better. If you have any suggestions, feel free to contact us.
 						</p>
 					</div>
 				</div>

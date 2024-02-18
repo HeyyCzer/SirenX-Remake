@@ -1,5 +1,5 @@
 import Colors from "@/lib/colors";
-import { defaultLightModel } from "@/lib/reducers/editor.reducer";
+import { defaultCarcolsLightModel, defaultLightModel } from "@/lib/reducers/editor.reducer";
 import { binaryToDecimal, decimalToBinary } from "@/utils/binary";
 import { json2xml } from "xml-js";
 import { createColor } from "./colors.controller";
@@ -11,7 +11,7 @@ const buildLights = (sirenSelected, fullFile) => {
 	for (const columnIndex in sirenItems) {
 		const columnData = sirenItems[columnIndex];
 
-		const rotation = Number(columnData.flashiness.delta.$.value);
+		const direction = Number(columnData.flashiness.delta.$.value);
 		const multiples = Number(columnData.flashiness.multiples.$.value);
 		const intensity = Number(columnData.intensity.$.value);
 
@@ -39,7 +39,7 @@ const buildLights = (sirenSelected, fullFile) => {
 
 				builtSirens[row][columnIndex] = {
 					color,
-					rotation,
+					direction,
 					multiples,
 					intensity,
 				}
@@ -79,18 +79,27 @@ const exportLights = (editor, settings) => {
 
 		for (let columnIndex = 0; columnIndex < settings.totalColumns.value; columnIndex++) {
 			let light = row[columnIndex];
+			if (!siren.sirens.Item[columnIndex]) {
+				siren.sirens.Item[columnIndex] = defaultCarcolsLightModel;
+			}
+
+			const columnData = siren.sirens.Item[columnIndex];
+			siren.sirens.Item[columnIndex] = {
+				_comment: ` Siren ${columnIndex + 1} `,
+				...columnData,
+			};
+			
 			if (!light) {
 				row[columnIndex] = defaultLightModel;
-				light = row[columnIndex];
+				light = row[columnIndex]
 			}
 
 			if (!sequencer[columnIndex]) sequencer[columnIndex] = "";
 
 			sequencer[columnIndex] += (light?.color !== "none" ? "1" : "0");
-			if (light?.color === "none") continue;
+			if (light?.color === "none" && sequencer[columnIndex].includes("1")) continue;
 
-			const columnData = siren.sirens.Item[columnIndex];
-			columnData.flashiness.delta.$.value = light.rotation;
+			columnData.flashiness.delta.$.value = light.direction;
 			columnData.flashiness.multiples.$.value = light.multiples;
 			columnData.intensity.$.value = light.intensity;
 
@@ -103,7 +112,7 @@ const exportLights = (editor, settings) => {
 		siren.sirens.Item[index].flashiness.sequencer.$.value = binaryToDecimal(sequence);
 	}
 
-	return json2xml(fullFile, { compact: true, attributesKey: "$", spaces: 2 });
+	return [json2xml(fullFile, { compact: true, attributesKey: "$", spaces: 2 }), fullFile];
 }
 
 export {

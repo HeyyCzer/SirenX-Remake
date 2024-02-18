@@ -8,6 +8,7 @@ import { xml2json } from 'xml-js';
 
 const uploadFile = async (fileContent) => {
 	const json = JSON.parse(xml2json(fileContent, { compact: true, attributesKey: "$" }));
+	console.log(json);
 	let sirens = json?.CVehicleModelInfoVarGlobal?.Sirens.Item;
 	if (!sirens) {
 		return Modal.fire({
@@ -58,7 +59,7 @@ const downloadFile = (editor, settings, fileName) => {
 		editorClone.sirenId = getRandomInt(100, 99999)
 	}
 
-	const content = exportLights(editorClone, settings);
+	const [content, jsonFileContent] = exportLights(editorClone, settings);
 
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
@@ -71,7 +72,7 @@ const downloadFile = (editor, settings, fileName) => {
   
 	document.body.removeChild(element);
 
-	return content;
+	return [content, jsonFileContent];
 }
 
 export {

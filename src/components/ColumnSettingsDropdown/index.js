@@ -1,4 +1,4 @@
-import DeltaEnum from '@/enum/rotation.enum';
+import DeltaEnum from '@/enum/direction.enum';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { updateLights } from '@/lib/reducers/editor.reducer';
 import { Modal } from '@/utils/modal';
@@ -55,10 +55,10 @@ export default function ColumnSettingsDropdown({ columnIndex, data }) {
 		});
 	}
 
-	const handleChangeRotation = (value) => {
+	const handleChangeDirection = (value) => {
 		const tempLights = JSON.parse(JSON.stringify(lights));
 		for (const row of Object.values(tempLights)) {
-			row[columnIndex].rotation = value.delta;
+			row[columnIndex].direction = value.delta;
 		}
 		dispatch(updateLights(tempLights));
 	}
@@ -90,7 +90,7 @@ export default function ColumnSettingsDropdown({ columnIndex, data }) {
 					</DropdownMenu.Item>
 					<DropdownMenu.Sub>
 						<DropdownMenu.SubTrigger className="group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-slate-600/80 data-[state=open]:text-gray-200 data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white data-[highlighted]:data-[state=open]:bg-slate-600/50 data-[highlighted]:data-[state=open]:text-white">
-							Change Rotation
+							Change Direction
 							<div className="ml-auto pl-[20px] text-gray-400 group-data-[highlighted]:text-white group-data-[disabled]:text-gray-400">
 								<FontAwesomeIcon icon={ faChevronRight } />
 							</div>
@@ -105,8 +105,8 @@ export default function ColumnSettingsDropdown({ columnIndex, data }) {
 									Object.entries(DeltaEnum).map(([id, value]) => (
 										<DropdownMenu.Item
 											key={id}
-											onSelect={ () => handleChangeRotation(value) }
-											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", data.rotation === value.delta && "bg-emerald-400/30")}
+											onSelect={ () => handleChangeDirection(value) }
+											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", data.direction === value.delta && "bg-emerald-400/30")}
 										>
 											{value.name}
 											<span className="text-gray-400 ml-auto mr-2">

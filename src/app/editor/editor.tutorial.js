@@ -14,7 +14,7 @@ export default function AppTutorial() {
 				{
 					target: "#toolbar-import",
 					title: "📤 Importing files",
-					content: "You can use this button to import your <b>carcols.meta</b> to the editor. This will allow you to edit the colors and rotation, for example, and after this, download it back to your computer.",
+					content: "You can use this button to import your <b>carcols.meta</b> to the editor. This will allow you to edit the colors and direction, for example, and after this, download it back to your computer.",
 					disableBeacon: true,
 				},
 				{

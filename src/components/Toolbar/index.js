@@ -55,7 +55,7 @@ export default function Toolbar() {
 			let minimumColumns = 20;
 			dispatch(updateSettings({
 				key: "totalColumns",
-				value: Math.max(result.lights.length, minimumColumns)
+				value: Math.max(result.lights?.[0]?.length, minimumColumns)
 			}));
 
 			dispatch(setCurrentBpm(result.bpm));
@@ -89,7 +89,7 @@ export default function Toolbar() {
 			}).then(({ isConfirmed, value: newSirenName }) => {
 				if (!isConfirmed) return;
 			
-				const fileContent = downloadFile({
+				const [fileContent, jsonFileContent] = downloadFile({
 					sirenId,
 					newSirenId,
 					newSirenName,
@@ -102,11 +102,11 @@ export default function Toolbar() {
 				dispatch(setUploadData({
 					id: newSirenId,
 					name: newSirenName,
-					file: fileContent
+					file: jsonFileContent
 				}));
 			});
 		});
-	}, []);
+	}, [lights, sirenId, sirenName, bpm, settings]);
 
 	const handleResetEditor = useCallback(() => {
 		Modal.fire({

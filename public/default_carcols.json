@@ -1,3071 +1,3077 @@
 {
-  "CVehicleModelInfoVarGlobal": {
-    "Sirens": {
-      "Item": {
-        "id": {
-          "$": {
-            "value": "1010"
-          }
-        },
-        "name": {
-			"_text": "SirenX-GeneratedCarcols"
-		},
-        "timeMultiplier": {
-          "$": {
-            "value": "1.0"
-          }
-        },
-        "lightFalloffMax": {
-          "$": {
-            "value": "10.0"
-          }
-        },
-        "lightFalloffExponent": {
-          "$": {
-            "value": "10.0"
-          }
-        },
-        "lightInnerConeAngle": {
-          "$": {
-            "value": "2.29061000"
-          }
-        },
-        "lightOuterConeAngle": {
-          "$": {
-            "value": "70.0"
-          }
-        },
-        "lightOffset": {
-          "$": {
-            "value": "0.00000000"
-          }
-        },
-        "textureName": {
-			"_text": "VehicleLight_sirenlight"
-		},
-        "sequencerBpm": {
-          "$": {
-            "value": "600"
-          }
-        },
-        "leftHeadLight": {
-          "sequencer": {
-            "$": {
-              "value": "0"
-            }
-          }
-        },
-        "rightHeadLight": {
-          "sequencer": {
-            "$": {
-              "value": "0"
-            }
-          }
-        },
-        "leftTailLight": {
-          "sequencer": {
-            "$": {
-              "value": "1431655765"
-            }
-          }
-        },
-        "rightTailLight": {
-          "sequencer": {
-            "$": {
-              "value": "2863311530"
-            }
-          }
-        },
-        "leftHeadLightMultiples": {
-          "$": {
-            "value": "1"
-          }
-        },
-        "rightHeadLightMultiples": {
-          "$": {
-            "value": "1"
-          }
-        },
-        "leftTailLightMultiples": {
-          "$": {
-            "value": "1"
-          }
-        },
-        "rightTailLightMultiples": {
-          "$": {
-            "value": "1"
-          }
-        },
-        "useRealLights": {
-          "$": {
-            "value": "true"
-          }
-        },
-        "sirens": {
-          "Item": [
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1431655765"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "3"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "100"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1431655723"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1431655723"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863311530"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "3"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "100"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863311541"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863311541"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863486250"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF9500"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1432005205"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF9500"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "1.57079633"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863486250"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "4"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": " -1.57079633"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1432005205"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "4"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "4.71238900"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "1.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1431655765"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "28.68000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4205467528"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "1.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "0"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "1.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4204112788"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863311530"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863311530"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1431655765"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "4.71238900"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "1.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "1431655765"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "true"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "28.68000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4205467528"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "1.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "0"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "1.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4204112788"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFFFF0300"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            },
-            {
-              "rotation": {
-                "delta": {
-                  "$": {
-                    "value": "-0.01000000"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "3.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "4294967295"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "1"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "flashiness": {
-                "delta": {
-                  "$": {
-                    "value": "3.14159300"
-                  }
-                },
-                "start": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "speed": {
-                  "$": {
-                    "value": "0.00000000"
-                  }
-                },
-                "sequencer": {
-                  "$": {
-                    "value": "2863311530"
-                  }
-                },
-                "multiples": {
-                  "$": {
-                    "value": "2"
-                  }
-                },
-                "direction": {
-                  "$": {
-                    "value": "false"
-                  }
-                },
-                "syncToBpm": {
-                  "$": {
-                    "value": "true"
-                  }
-                }
-              },
-              "corona": {
-                "intensity": {
-                  "$": {
-                    "value": "25.00000000"
-                  }
-                },
-                "size": {
-                  "$": {
-                    "value": "0.50000000"
-                  }
-                },
-                "pull": {
-                  "$": {
-                    "value": "0.15000000"
-                  }
-                },
-                "faceCamera": {
-                  "$": {
-                    "value": "false"
-                  }
-                }
-              },
-              "color": {
-                "$": {
-                  "value": "0xFF000AFF"
-                }
-              },
-              "intensity": {
-                "$": {
-                  "value": "1.00000000"
-                }
-              },
-              "lightGroup": {
-                "$": {
-                  "value": "1"
-                }
-              },
-              "rotate": {
-                "$": {
-                  "value": "false"
-                }
-              },
-              "scale": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "scaleFactor": {
-                "$": {
-                  "value": "2"
-                }
-              },
-              "flash": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "light": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "spotLight": {
-                "$": {
-                  "value": "true"
-                }
-              },
-              "castShadows": {
-                "$": {
-                  "value": "false"
-                }
-              }
-            }
-          ]
-        }
-      }
-    }
-  }
+	"_declaration": {
+		"$": {
+			"version": "1.0",
+			"encoding": "UTF-8"
+		}
+	},
+	"CVehicleModelInfoVarGlobal": {
+		"Sirens": {
+			"Item": {
+				"id": {
+					"$": {
+						"value": "1010"
+					}
+				},
+				"name": {
+					"_text": "SirenX-GeneratedCarcols"
+				},
+				"timeMultiplier": {
+					"$": {
+						"value": "1.0"
+					}
+				},
+				"lightFalloffMax": {
+					"$": {
+						"value": "10.0"
+					}
+				},
+				"lightFalloffExponent": {
+					"$": {
+						"value": "10.0"
+					}
+				},
+				"lightInnerConeAngle": {
+					"$": {
+						"value": "2.29061000"
+					}
+				},
+				"lightOuterConeAngle": {
+					"$": {
+						"value": "70.0"
+					}
+				},
+				"lightOffset": {
+					"$": {
+						"value": "0.00000000"
+					}
+				},
+				"textureName": {
+					"_text": "VehicleLight_sirenlight"
+				},
+				"sequencerBpm": {
+					"$": {
+						"value": "200"
+					}
+				},
+				"leftHeadLight": {
+					"sequencer": {
+						"$": {
+							"value": "0"
+						}
+					}
+				},
+				"rightHeadLight": {
+					"sequencer": {
+						"$": {
+							"value": "0"
+						}
+					}
+				},
+				"leftTailLight": {
+					"sequencer": {
+						"$": {
+							"value": "1431655765"
+						}
+					}
+				},
+				"rightTailLight": {
+					"sequencer": {
+						"$": {
+							"value": "2863311530"
+						}
+					}
+				},
+				"leftHeadLightMultiples": {
+					"$": {
+						"value": "1"
+					}
+				},
+				"rightHeadLightMultiples": {
+					"$": {
+						"value": "1"
+					}
+				},
+				"leftTailLightMultiples": {
+					"$": {
+						"value": "2"
+					}
+				},
+				"rightTailLightMultiples": {
+					"$": {
+						"value": "2"
+					}
+				},
+				"useRealLights": {
+					"$": {
+						"value": "true"
+					}
+				},
+				"sirens": {
+					"Item": [
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1431655765"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "3"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "100"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1431655723"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1431655723"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863311530"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "3"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "100"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863311541"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863311541"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863486250"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF9500"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1432005205"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF9500"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "1.57079633"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863486250"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "4"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "-1.57079633"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1432005205"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "4"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "4.71238900"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "1.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1431655765"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "28.68000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4205467528"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "1.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "1.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4204112788"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863311530"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863311530"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1431655765"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "4.71238900"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "1.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "1431655765"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "true"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "28.68000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4205467528"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "1.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "0"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "1.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4204112788"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFFFF0300"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						},
+						{
+							"rotation": {
+								"delta": {
+									"$": {
+										"value": "-0.01000000"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "3.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "4294967295"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "1"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"flashiness": {
+								"delta": {
+									"$": {
+										"value": "3.141593"
+									}
+								},
+								"start": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"speed": {
+									"$": {
+										"value": "0.00000000"
+									}
+								},
+								"sequencer": {
+									"$": {
+										"value": "2863311530"
+									}
+								},
+								"multiples": {
+									"$": {
+										"value": "2"
+									}
+								},
+								"direction": {
+									"$": {
+										"value": "false"
+									}
+								},
+								"syncToBpm": {
+									"$": {
+										"value": "true"
+									}
+								}
+							},
+							"corona": {
+								"intensity": {
+									"$": {
+										"value": "25.00000000"
+									}
+								},
+								"size": {
+									"$": {
+										"value": "0.50000000"
+									}
+								},
+								"pull": {
+									"$": {
+										"value": "0.15000000"
+									}
+								},
+								"faceCamera": {
+									"$": {
+										"value": "false"
+									}
+								}
+							},
+							"color": {
+								"$": {
+									"value": "0xFF000AFF"
+								}
+							},
+							"intensity": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"lightGroup": {
+								"$": {
+									"value": "1"
+								}
+							},
+							"rotate": {
+								"$": {
+									"value": "false"
+								}
+							},
+							"scale": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"scaleFactor": {
+								"$": {
+									"value": "2"
+								}
+							},
+							"flash": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"light": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"spotLight": {
+								"$": {
+									"value": "true"
+								}
+							},
+							"castShadows": {
+								"$": {
+									"value": "false"
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
 }
