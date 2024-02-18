@@ -11,7 +11,7 @@ const buildLights = (sirenSelected, fullFile) => {
 	for (const columnIndex in sirenItems) {
 		const columnData = sirenItems[columnIndex];
 
-		const rotation = Number(columnData.rotation.delta.$.value);
+		const rotation = Number(columnData.flashiness.delta.$.value);
 		const multiples = Number(columnData.flashiness.multiples.$.value);
 		const intensity = Number(columnData.intensity.$.value);
 
@@ -90,7 +90,7 @@ const exportLights = (editor, settings) => {
 			if (light?.color === "none") continue;
 
 			const columnData = siren.sirens.Item[columnIndex];
-			columnData.rotation.delta.$.value = light.rotation;
+			columnData.flashiness.delta.$.value = light.rotation;
 			columnData.flashiness.multiples.$.value = light.multiples;
 			columnData.intensity.$.value = light.intensity;
 
