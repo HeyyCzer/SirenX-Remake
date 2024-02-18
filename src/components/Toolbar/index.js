@@ -51,6 +51,13 @@ export default function Toolbar() {
 			if (!result) return;
 
 			dispatch(updateLights(result.lights));
+			
+			let minimumColumns = 20;
+			dispatch(updateSettings({
+				key: "totalColumns",
+				value: Math.max(result.lights.length, minimumColumns)
+			}));
+
 			dispatch(setCurrentBpm(result.bpm));
 			dispatch(setUploadData({
 				id: result.id,
