@@ -17,10 +17,12 @@ const initialState = {
 
 	selectedColor: "red",
 	bpm: 600,
-	lights: Array(32).fill()
-		.map(() => 
-			Array(20).fill(defaultLightModel)
-		),
+	lights: Object.fromEntries(
+		Array.from({ length: 32 }, (_, i) => [
+			i,
+			Array.from({ length: 20 }, () => defaultLightModel)
+		])
+	) 
 }
 
 const editorSlice = createSlice({
