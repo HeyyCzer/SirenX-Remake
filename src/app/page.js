@@ -11,7 +11,7 @@ import styles from "./Home.module.css";
 import { AOSInit } from "@/components/AOSInit";
 import { faHourglass2 } from "@fortawesome/free-regular-svg-icons";
 import heroCharacters from "/public/images/home/characters.png";
-import screenshot from "/public/images/home/screenshot.png";
+import screenshot from "/public/images/home/screenshot.gif";
 
 export default function Home() {
 	useEffect(() => {
