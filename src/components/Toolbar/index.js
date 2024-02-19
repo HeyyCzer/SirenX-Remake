@@ -1,4 +1,5 @@
 import { downloadFile, uploadFile } from "@/controllers/file.controller";
+import { event } from "@/gtag";
 import Colors from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { setCurrentBpm, setSelectedColor, setUploadData, updateLights } from "@/lib/reducers/editor.reducer";
@@ -52,11 +53,18 @@ export default function Toolbar() {
 
 			dispatch(updateLights(result.lights));
 			
-			let minimumColumns = 20;
+			const minimumColumns = 20;
+			const totalColumns = Math.max(result.lights?.[0]?.length, minimumColumns);
 			dispatch(updateSettings({
 				key: "totalColumns",
-				value: Math.max(result.lights?.[0]?.length, minimumColumns)
+				value: totalColumns
 			}));
+
+			event({
+				action: "file_import",
+				category: `editor`,
+				label: `${totalColumns} columns - ${result.bpm} BPM`
+			});
 
 			dispatch(setCurrentBpm(result.bpm));
 			dispatch(setUploadData({
@@ -98,6 +106,12 @@ export default function Toolbar() {
 					bpm
 				}, settings, `${uuidv4()}.meta`);
 				if (!fileContent) return;
+
+				event({
+					action: "file_export",
+					category: `editor`,
+					label: `${settings.totalColumns.value} columns - ${bpm} BPM`
+				});
 
 				dispatch(setUploadData({
 					id: newSirenId,
