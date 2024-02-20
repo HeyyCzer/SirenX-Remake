@@ -57,13 +57,33 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 		});
 	}, [dispatch, lights, columnIndex, data.multiples]);
 
-	const handleChangeDirection = useCallback((value) => {
+	const handleChangeDirection = useCallback(async (delta) => {
+		if (delta === "CUSTOM") {
+			const { isConfirmed, value: inputValue } = await Modal.fire({
+				title: "Custom direction",
+				text: "This will change the direction of the light.",
+				input: "text",
+				inputLabel: "Delta",
+				inputValue: data.direction,
+				preConfirm: (value) => {
+					if (isNaN(value)) {
+						return Promise.reject("Invalid value");
+					}
+					return Promise.resolve(value);
+				}
+			});
+
+			if (!isConfirmed) return;
+
+			delta = Number(inputValue);
+		}
+
 		const tempLights = JSON.parse(JSON.stringify(lights));
 		for (const row of Object.values(tempLights)) {
-			row[columnIndex].direction = value.delta;
+			row[columnIndex].direction = delta;
 		}
 		dispatch(updateLights(tempLights));
-	}, [dispatch, lights, columnIndex]);
+	}, [dispatch, lights, columnIndex, data.direction]);
 
 	const dropdownMenu = useMemo(() => (
 		<DropdownMenu.Root>
@@ -107,7 +127,7 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 									Object.entries(DeltaEnum).map(([id, value]) => (
 										<DropdownMenu.Item
 											key={`direction-${id}-${columnIndex}`}
-											onSelect={ () => handleChangeDirection(value) }
+											onSelect={ () => handleChangeDirection(value.delta) }
 											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", ((data.direction === value.delta) && "bg-emerald-400/30"))}
 										>
 											{value.name}
@@ -117,6 +137,12 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 										</DropdownMenu.Item>
 									))
 								}
+								<DropdownMenu.Item
+									onSelect={ () => handleChangeDirection("CUSTOM") }
+									className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", !Object.values(DeltaEnum).map(d => d.delta).includes(data.direction) && "bg-emerald-400/30")}
+								>
+									Custom...
+								</DropdownMenu.Item>
 							</DropdownMenu.SubContent>
 						</DropdownMenu.Portal>
 					</DropdownMenu.Sub>
