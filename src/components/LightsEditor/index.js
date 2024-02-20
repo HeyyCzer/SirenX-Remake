@@ -49,7 +49,7 @@ export default function LightsEditor() {
 					{
 						Array.from({ length: totalColumns.value })
 							.map((_, columnIndex) => (
-								<ColumnSettingsDropdown key={"jkasdjaskjdkasjdkjasjdka"} columnIndex={columnIndex} />
+								<ColumnSettingsDropdown key={columnIndex} columnIndex={columnIndex} />
 							))
 					}
 				</div>
