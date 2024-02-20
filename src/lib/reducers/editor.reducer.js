@@ -169,7 +169,9 @@ const initialState = {
 	lights: Object.fromEntries(
 		Array.from({ length: 32 }, (_, i) => [
 			i,
-			Array.from({ length: 20 }, () => defaultLightModel)
+			Object.fromEntries(
+				Array.from({ length: 20 }, (_, j) => [j, defaultLightModel])
+			)
 		])
 	) 
 }

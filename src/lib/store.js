@@ -7,8 +7,8 @@ import tutorialSlice from "./reducers/tutorial.reducer";
 export const makeStore = () => {
 	const preloadedEditor = typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`SirenX/editor`)) ?? undefined) : undefined;
 	if (preloadedEditor && Object.keys(preloadedEditor?.lights ?? {})?.length > 0) {
-		for (const row of Object.values(preloadedEditor.lights)) {
-			for (const item of row ?? []) {
+		for (const row of Object.values(preloadedEditor.lights) ?? {}) {
+			for (const item of Object.values(row) ?? {}) {
 				if (item?.color?.startsWith("CUSTOM_")) {
 					createColor(item.color.replace("CUSTOM_", ""))
 				}

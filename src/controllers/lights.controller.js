@@ -32,17 +32,15 @@ const buildLights = (sirenSelected, fullFile) => {
 		const binarySequence = decimalToBinary(columnData.flashiness.sequencer.$.value);
 		for (const row in binarySequence) {
 			const active = binarySequence[row] === "1";
-			if (active) {
-				if (!builtSirens[row]) {
-					builtSirens[row] = [];
-				}
+			if (!builtSirens[row]) {
+				builtSirens[row] = [];
+			}
 
-				builtSirens[row][columnIndex] = {
-					color,
-					direction,
-					multiples,
-					intensity,
-				}
+			builtSirens[row][columnIndex] = {
+				color: active ? color : "none",
+				direction,
+				multiples,
+				intensity,
 			}
 		}
 	}
