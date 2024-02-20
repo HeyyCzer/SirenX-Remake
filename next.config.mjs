@@ -12,7 +12,6 @@ const nextConfig = {
 	},
 	webpack: (config, context) => {
 		injectWhyDidYouRender(config, context)
-
 		return config;
 	}
 };
