@@ -1,3 +1,5 @@
+import injectWhyDidYouRender from "./scripts/why-did-you-render/index.js";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
@@ -8,6 +10,11 @@ const nextConfig = {
 			},
 		]
 	},
+	webpack: (config, context) => {
+		injectWhyDidYouRender(config, context)
+
+		return config;
+	}
 };
 
 export default nextConfig;

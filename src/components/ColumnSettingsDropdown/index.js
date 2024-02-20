@@ -5,13 +5,15 @@ import { Modal } from '@/utils/modal';
 import { faChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { useCallback, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export default function ColumnSettingsDropdown({ columnIndex, data }) {
+export default function ColumnSettingsDropdown({ columnIndex }) {
 	const dispatch = useAppDispatch();
 	const { lights } = useAppSelector((state) => state.editor);
+	const data = useMemo(() => lights[0]?.[columnIndex], [lights, columnIndex]);
 
-	const handleChangeIntensity = () => {
+	const handleChangeIntensity = useCallback(() => {
 		Modal.fire({
 			title: "Change intensity",
 			text: "This will change the intensity of the light. The higher the number, the brighter the light will be. The lower the number, the dimmer the light will be. The value must be a number and greater than or equal to 0.",
@@ -32,9 +34,9 @@ export default function ColumnSettingsDropdown({ columnIndex, data }) {
 			}
 			dispatch(updateLights(tempLights));
 		});
-	}
+	}, [dispatch, lights, columnIndex, data.intensity]);
 
-	const handleChangeMultiples = () => {
+	const handleChangeMultiples = useCallback(() => {
 		Modal.fire({
 			title: "Change multiples",
 			text: "This will change the amount of flashes that a light will do in one \"beat\". The higher the number, the more flashes it will do. The value must be a number and greater than or equal to 1",
@@ -53,15 +55,15 @@ export default function ColumnSettingsDropdown({ columnIndex, data }) {
 			}
 			dispatch(updateLights(tempLights));
 		});
-	}
+	}, [dispatch, lights, columnIndex, data.multiples]);
 
-	const handleChangeDirection = (value) => {
+	const handleChangeDirection = useCallback((value) => {
 		const tempLights = JSON.parse(JSON.stringify(lights));
 		for (const row of Object.values(tempLights)) {
 			row[columnIndex].direction = value.delta;
 		}
 		dispatch(updateLights(tempLights));
-	}
+	}, [dispatch, lights, columnIndex]);
 
 	return (
 		<DropdownMenu.Root>
@@ -104,9 +106,9 @@ export default function ColumnSettingsDropdown({ columnIndex, data }) {
 								{
 									Object.entries(DeltaEnum).map(([id, value]) => (
 										<DropdownMenu.Item
-											key={id}
+											key={`direction-${id}-${columnIndex}`}
 											onSelect={ () => handleChangeDirection(value) }
-											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", data.direction === value.delta && "bg-emerald-400/30")}
+											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", ((data.direction === value.delta) && "bg-emerald-400/30"))}
 										>
 											{value.name}
 											<span className="text-gray-400 ml-auto mr-2">

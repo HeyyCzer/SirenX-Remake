@@ -74,7 +74,7 @@ export default function Toolbar() {
 			}));
 		}
 		reader.readAsText(file);
-	}, [hiddenFileInput]);
+	}, [dispatch, hiddenFileInput]);
 
 	const handleDownloadFile = useCallback(() => {
 		Modal.fire({
@@ -120,7 +120,7 @@ export default function Toolbar() {
 				}));
 			});
 		});
-	}, [lights, sirenId, sirenName, bpm, settings]);
+	}, [dispatch, lights, sirenId, sirenName, bpm, settings]);
 
 	const handleResetEditor = useCallback(() => {
 		Modal.fire({
@@ -145,6 +145,13 @@ export default function Toolbar() {
 		});
 	}, []);
 
+	const handleUpdateBPM = useCallback((e) => {
+		if (e.target.value < 10) e.target.value = 10;
+		if (e.target.value > 1200) e.target.value = 1200;
+
+		dispatch(setCurrentBpm(e.target.value))
+	}, [dispatch]);
+
 	return (
 		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6 pb-6">
 			<input type="file" ref={hiddenFileInput} className="hidden" accept=".meta" onChange={ handleFileUpload } />
@@ -166,14 +173,14 @@ export default function Toolbar() {
 					id="toolbar-export"
 					disabled={!settings.oneColorPerColumn.value}
 					className="bg-gradient-to-r from-orange-500 to-yellow-500 disabled:from-gray-500 disabled:to-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
-					onClick={ () => handleDownloadFile() }
+					onClick={ handleDownloadFile }
 				>
 					Export
 				</button>
 				<button
 					id="toolbar-reset"
 					className="bg-gradient-to-r from-red-600 to-red-800 text-white uppercase tracking-[2px] font-semibold w-full rounded-lg text-sm py-1"
-					onClick={ () => handleResetEditor() }
+					onClick={ handleResetEditor }
 				>
 					Reset editor
 				</button>
@@ -198,12 +205,7 @@ export default function Toolbar() {
 							max="1200" min="10" step="10"
 							className="proportional-nums py-0 px-0 bg-transparent border-0 border-b-2 border-white/30 focus:border-emerald-400 transition-all outline-none text-center text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:ring-0"
 							value={bpm}
-							onChange={(e) => {
-								if (e.target.value < 10) e.target.value = 10;
-								if (e.target.value > 1200) e.target.value = 1200;
-
-								dispatch(setCurrentBpm(e.target.value))
-							}}
+							onChange={ handleUpdateBPM }
 						/>
 					</span>
 				</div>
