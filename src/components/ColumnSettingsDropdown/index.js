@@ -5,10 +5,10 @@ import { Modal } from '@/utils/modal';
 import { faChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import { useCallback, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export default function ColumnSettingsDropdown({ columnIndex }) {
+const ColumnSettingsDropdown = memo(({ columnIndex }) => {
 	const dispatch = useAppDispatch();
 	const { lights } = useAppSelector((state) => state.editor);
 	const data = useMemo(() => lights[0]?.[columnIndex] ?? defaultLightModel, [lights, columnIndex]);
@@ -85,11 +85,11 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 		dispatch(updateLights(tempLights));
 	}, [dispatch, lights, columnIndex, data.direction]);
 
-	const dropdownMenu = useMemo(() => (
+	return (
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild>
 				<button className="text-gray-400" id={`settings-dropdown-${columnIndex}`}>
-					<FontAwesomeIcon icon={ faGear } />
+					<FontAwesomeIcon icon={faGear} />
 				</button>
 			</DropdownMenu.Trigger>
 
@@ -114,7 +114,7 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 						<DropdownMenu.SubTrigger className="group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-slate-600/80 data-[state=open]:text-gray-200 data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white data-[highlighted]:data-[state=open]:bg-slate-600/50 data-[highlighted]:data-[state=open]:text-white">
 							Change Direction
 							<div className="ml-auto pl-[20px] text-gray-400 group-data-[highlighted]:text-white group-data-[disabled]:text-gray-400">
-								<FontAwesomeIcon icon={ faChevronRight } />
+								<FontAwesomeIcon icon={faChevronRight} />
 							</div>
 						</DropdownMenu.SubTrigger>
 						<DropdownMenu.Portal>
@@ -127,7 +127,7 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 									Object.entries(DeltaEnum).map(([id, value]) => (
 										<DropdownMenu.Item
 											key={`direction-${id}-${columnIndex}`}
-											onSelect={ () => handleChangeDirection(value.delta) }
+											onSelect={() => handleChangeDirection(value.delta)}
 											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", ((data.direction === value.delta) && "bg-emerald-400/30"))}
 										>
 											{value.name}
@@ -138,7 +138,7 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 									))
 								}
 								<DropdownMenu.Item
-									onSelect={ () => handleChangeDirection("CUSTOM") }
+									onSelect={() => handleChangeDirection("CUSTOM")}
 									className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", !Object.values(DeltaEnum).map(d => d.delta).includes(data.direction) && "bg-emerald-400/30")}
 								>
 									Custom...
@@ -149,7 +149,7 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 				</DropdownMenu.Content>
 			</DropdownMenu.Portal>
 		</DropdownMenu.Root>
-	), [data.direction, handleChangeDirection, handleChangeIntensity, handleChangeMultiples, columnIndex]);
+	)
+});
 
-	return dropdownMenu;
-}
+export default ColumnSettingsDropdown;
