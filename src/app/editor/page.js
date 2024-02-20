@@ -3,19 +3,16 @@
 import styles from "./Editor.module.css";
 
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { twMerge } from "tailwind-merge";
 
-import ColumnSettingsDropdown from "@/components/ColumnSettingsDropdown";
+import LightsEditor from "@/components/LightsEditor";
 import SeparatorsContainer from "@/components/SeparatorsContainer";
-import { defaultLightModel, updateLights } from "@/lib/reducers/editor.reducer";
+import { updateLights } from "@/lib/reducers/editor.reducer";
 import dynamic from "next/dynamic";
 import AppTutorial from "./editor.tutorial";
 
-const Light = dynamic(() => import("@/components/Light"), { ssr: false });
 const Toolbar = dynamic(() => import("@/components/Toolbar"), { ssr: false });
 
 export default function Editor() {
@@ -46,17 +43,8 @@ export default function Editor() {
 	}, []);
 
 	const dispatch = useAppDispatch();
-	const { bpm, lights } = useAppSelector((state) => state.editor);
+	const { lights } = useAppSelector((state) => state.editor);
 	const settings = useAppSelector((state) => state.settings);
-
-	const [currentRow, setCurrentRow] = useState(0);
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentRow((prev) => (prev + 1) % 32);
-		}, 1000 / (bpm / 60));
-
-		return () => clearInterval(interval);
-	}, [bpm]);
 
 	useEffect(() => {
 		const preventContextMenu = (e) => e.preventDefault();
@@ -101,50 +89,7 @@ export default function Editor() {
 
 			<div className={`${styles.background} min-h-screen px-12 py-9`}>
 				<div className="flex justify-between gap-x-6">
-					<main className="flex flex-col gap-y-6 w-fit mx-auto">
-						<Link href="/" className="text-2xl text-white font-bold upper w-fit">
-							Siren
-							<span className="text-gradient-primary">X</span>
-						</Link>
-
-						{/* Preview bar */}
-						<div>
-							<div>
-								<h2 className="text-gray-300/60 uppercase text-xs tracking-[2px] font-light text-center">Preview</h2>
-							</div>
-							<div className="flex gap-x-1 px-1">
-								{Array(settings.totalColumns.value)
-									.fill()
-									.map((_, columnIndex) => (
-										<Light current={true} key={`preview-${columnIndex}`} disabled row={currentRow} column={columnIndex} />
-									))}
-							</div>
-
-							<hr className="border-gray-300/30 w-1/2 mx-auto mt-2" />
-						</div>
-
-						<div>
-							<div className={twMerge(`flex gap-x-1 justify-around rounded-lg px-1`)}>
-								{Array(settings.totalColumns.value)
-									.fill()
-									.map((_, columnIndex) => (
-											<ColumnSettingsDropdown key={columnIndex} columnIndex={columnIndex} data={lights?.[0]?.[columnIndex] || defaultLightModel} />
-										))}
-							</div>
-							{Array(32)
-								.fill()
-								.map((_, rowIndex) => (
-									<div className={twMerge(`flex gap-x-1 rounded-lg px-1`, (rowIndex === currentRow && "bg-white/10"))} key={rowIndex}>
-										{Array(settings.totalColumns.value)
-											.fill()
-											.map((_, columnIndex) => (
-												<Light key={`${rowIndex}-${columnIndex}`} row={rowIndex} column={columnIndex} current={rowIndex === currentRow} />
-											))}
-									</div>
-								))}
-						</div>
-					</main>
-
+					<LightsEditor />
 					<Toolbar />
 				</div>
 			</div>
