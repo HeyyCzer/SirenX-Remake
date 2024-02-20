@@ -204,7 +204,7 @@ export default function Toolbar() {
 							type="number"
 							max="1200" min="10" step="10"
 							className="proportional-nums py-0 px-0 bg-transparent border-0 border-b-2 border-white/30 focus:border-emerald-400 transition-all outline-none text-center text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:ring-0"
-							defaultValue={bpm}
+							value={bpm}
 							onChange={ handleUpdateBPM }
 						/>
 					</span>

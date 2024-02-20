@@ -36,6 +36,8 @@ function getContrast(hexColor) {
 
 const createColor = (carcolsColor) => {
 	const key = `CUSTOM_${carcolsColor}`;
+	if (Colors[key]) return key;
+
 	const hexColor = carcolsColor.slice(4);
 	const rgbColor = hexToRgb(hexColor);
 
