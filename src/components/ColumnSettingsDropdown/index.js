@@ -1,6 +1,6 @@
 import DeltaEnum from '@/enum/direction.enum';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { updateLights } from '@/lib/reducers/editor.reducer';
+import { defaultLightModel, updateLights } from '@/lib/reducers/editor.reducer';
 import { Modal } from '@/utils/modal';
 import { faChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +11,7 @@ import { twMerge } from 'tailwind-merge';
 export default function ColumnSettingsDropdown({ columnIndex }) {
 	const dispatch = useAppDispatch();
 	const { lights } = useAppSelector((state) => state.editor);
-	const data = useMemo(() => lights[0]?.[columnIndex], [lights, columnIndex]);
+	const data = useMemo(() => lights[0]?.[columnIndex] ?? defaultLightModel, [lights, columnIndex]);
 
 	const handleChangeIntensity = useCallback(() => {
 		Modal.fire({
