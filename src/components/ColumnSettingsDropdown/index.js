@@ -65,10 +65,10 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 		dispatch(updateLights(tempLights));
 	}, [dispatch, lights, columnIndex]);
 
-	return (
+	const dropdownMenu = useMemo(() => (
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild>
-				<button className="text-gray-400">
+				<button className="text-gray-400" id={`settings-dropdown-${columnIndex}`}>
 					<FontAwesomeIcon icon={ faGear } />
 				</button>
 			</DropdownMenu.Trigger>
@@ -123,5 +123,7 @@ export default function ColumnSettingsDropdown({ columnIndex }) {
 				</DropdownMenu.Content>
 			</DropdownMenu.Portal>
 		</DropdownMenu.Root>
-	);
+	), [data.direction, handleChangeDirection, handleChangeIntensity, handleChangeMultiples, columnIndex]);
+
+	return dropdownMenu;
 }
