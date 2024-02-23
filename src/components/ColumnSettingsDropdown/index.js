@@ -8,7 +8,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { memo, useCallback, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const ColumnSettingsDropdown = memo(({ columnIndex }) => {
+const ColumnSettingsDropdown = ({ columnIndex }) => {
 	const dispatch = useAppDispatch();
 	const { lights } = useAppSelector((state) => state.editor);
 	const data = useMemo(() => lights[0]?.[columnIndex] ?? defaultLightModel, [lights, columnIndex]);
@@ -150,6 +150,6 @@ const ColumnSettingsDropdown = memo(({ columnIndex }) => {
 			</DropdownMenu.Portal>
 		</DropdownMenu.Root>
 	)
-});
+};
 
-export default ColumnSettingsDropdown;
+export default memo(ColumnSettingsDropdown);
