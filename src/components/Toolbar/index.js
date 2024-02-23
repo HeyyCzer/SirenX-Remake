@@ -120,7 +120,7 @@ export default function Toolbar() {
 				}));
 			});
 		});
-	}, [dispatch, lights, sirenId, sirenName, bpm, settings]);
+	}, [dispatch, lights, sirenId, sirenName, bpm, settings, uploadedFile]);
 
 	const handleResetEditor = useCallback(() => {
 		Modal.fire({
