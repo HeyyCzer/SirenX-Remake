@@ -4,7 +4,7 @@ import { updateLight } from "@/lib/reducers/editor.reducer";
 
 import { twMerge } from "tailwind-merge";
 
-function getColumn(number) {
+function getRow(number) {
 	if (number <= 0 || !Number.isInteger(number)) {
 		return;
 	}
@@ -59,8 +59,9 @@ export default function Light({ current = false, disabled = false, row, column }
 			}}
 		>
 			{!disabled && (
-				<span className="hidden group-hover:block text-[10px]">
-					{getColumn(row + 1)} {column + 1}
+				<span className={`${row !== 0 && "hidden"} group-hover:block text-[10px]`}>
+					<span className="hidden group-hover:inline-block">{getRow(row + 1)}{' '}</span>
+					<span className="group-hover:text-[10px] text-xs">{column + 1}</span>
 				</span>
 			)}
 		</button>
