@@ -14,6 +14,7 @@ const buildLights = (sirenSelected, fullFile) => {
 		const direction = Number(columnData.flashiness.delta.$.value);
 		const multiples = Number(columnData.flashiness.multiples.$.value);
 		const intensity = Number(columnData.intensity.$.value);
+		const scaleFactor = Number(columnData.scaleFactor.$.value);
 
 		let carcolsColor = columnData.color.$.value;
 		let color = null;
@@ -41,6 +42,7 @@ const buildLights = (sirenSelected, fullFile) => {
 				direction,
 				multiples,
 				intensity,
+				scaleFactor
 			}
 		}
 	}
@@ -100,6 +102,7 @@ const exportLights = (editor, settings) => {
 			columnData.flashiness.delta.$.value = light.direction;
 			columnData.flashiness.multiples.$.value = light.multiples;
 			columnData.intensity.$.value = light.intensity;
+			columnData.scaleFactor.$.value = light.scaleFactor;
 
 			const color = Colors[light.color];
 			columnData.color.$.value = color.carcols.color;

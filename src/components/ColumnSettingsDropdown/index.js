@@ -1,4 +1,5 @@
 import DeltaEnum from '@/enum/direction.enum';
+import ScaleFactorEnum from '@/enum/scaleFactor.enum';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { defaultLightModel, updateLights } from '@/lib/reducers/editor.reducer';
 import { Modal } from '@/utils/modal';
@@ -18,6 +19,7 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 			title: "Change intensity",
 			text: "This will change the intensity of the light. The higher the number, the brighter the light will be. The lower the number, the dimmer the light will be. The value must be a number and greater than or equal to 0.",
 			input: "text",
+			inputLabel: "Intensity",
 			inputValue: data.intensity,
 			preConfirm: (value) => {
 				if (isNaN(value) || value < 0) {
@@ -41,6 +43,7 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 			title: "Change multiples",
 			text: "This will change the amount of flashes that a light will do in one \"beat\". The higher the number, the more flashes it will do. The value must be a number and greater than or equal to 1",
 			input: "number",
+			inputLabel: "Multiples",
 			inputValue: data.multiples,
 			inputAttributes: {
 				min: 1,
@@ -56,6 +59,28 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 			dispatch(updateLights(tempLights));
 		});
 	}, [dispatch, lights, columnIndex, data.multiples]);
+
+	const handleChangeScaleFactor = useCallback(async (scaleFactor) => {
+		if (scaleFactor === "CUSTOM") {
+			const { isConfirmed, value: inputValue } = await Modal.fire({
+				title: "Custom scale factor",
+				text: "This will change the scale factor of the light.",
+				input: "number",
+				inputLabel: "Scale Factor",
+				inputValue: data.scaleFactor
+			});
+
+			if (!isConfirmed) return;
+
+			scaleFactor = inputValue;
+		}
+
+		const tempLights = JSON.parse(JSON.stringify(lights));
+		for (const row of Object.values(tempLights)) {
+			row[columnIndex].scaleFactor = scaleFactor;
+		}
+		dispatch(updateLights(tempLights));
+	}, [dispatch, lights, columnIndex, data.scaleFactor]);
 
 	const handleChangeDirection = useCallback(async (delta) => {
 		if (delta === "CUSTOM") {
@@ -112,6 +137,42 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 					</DropdownMenu.Item>
 					<DropdownMenu.Sub>
 						<DropdownMenu.SubTrigger className="group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-slate-600/80 data-[state=open]:text-gray-200 data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white data-[highlighted]:data-[state=open]:bg-slate-600/50 data-[highlighted]:data-[state=open]:text-white">
+							Change Scale Factor
+							<div className="ml-auto pl-[20px] text-gray-400 group-data-[highlighted]:text-white group-data-[disabled]:text-gray-400">
+								<FontAwesomeIcon icon={faChevronRight} />
+							</div>
+						</DropdownMenu.SubTrigger>
+						<DropdownMenu.Portal>
+							<DropdownMenu.SubContent
+								className="ml-1 min-w-[220px] bg-slate-800 rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+								sideOffset={2}
+								alignOffset={-5}
+							>
+								{
+									Object.entries(ScaleFactorEnum).map(([id, scaleData]) => (
+										<DropdownMenu.Item
+											key={`scalefactor-${id}-${columnIndex}`}
+											onSelect={() => handleChangeScaleFactor(scaleData.value)}
+											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", ((data.scaleFactor === scaleData.value) && "bg-emerald-400/30"))}
+										>
+											{scaleData.name}
+											<span className="text-gray-400 ml-auto mr-2">
+												({scaleData.value})
+											</span>
+										</DropdownMenu.Item>
+									))
+								}
+								<DropdownMenu.Item
+									onSelect={() => handleChangeScaleFactor("CUSTOM")}
+									className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", !Object.values(ScaleFactorEnum).map(d => d.value).includes(data.scaleFactor) && "bg-emerald-400/30")}
+								>
+									Custom...
+								</DropdownMenu.Item>
+							</DropdownMenu.SubContent>
+						</DropdownMenu.Portal>
+					</DropdownMenu.Sub>
+					<DropdownMenu.Sub>
+						<DropdownMenu.SubTrigger className="group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-slate-600/80 data-[state=open]:text-gray-200 data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white data-[highlighted]:data-[state=open]:bg-slate-600/50 data-[highlighted]:data-[state=open]:text-white">
 							Change Direction
 							<div className="ml-auto pl-[20px] text-gray-400 group-data-[highlighted]:text-white group-data-[disabled]:text-gray-400">
 								<FontAwesomeIcon icon={faChevronRight} />
@@ -124,15 +185,15 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 								alignOffset={-5}
 							>
 								{
-									Object.entries(DeltaEnum).map(([id, value]) => (
+									Object.entries(DeltaEnum).map(([id, directionData]) => (
 										<DropdownMenu.Item
 											key={`direction-${id}-${columnIndex}`}
-											onSelect={() => handleChangeDirection(value.delta)}
-											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", ((data.direction === value.delta) && "bg-emerald-400/30"))}
+											onSelect={() => handleChangeDirection(directionData.delta)}
+											className={twMerge("group text-[13px] leading-none text-gray-200 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-gray-400 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-600/50 data-[highlighted]:text-white", ((data.direction === directionData.delta) && "bg-emerald-400/30"))}
 										>
-											{value.name}
+											{directionData.name}
 											<span className="text-gray-400 ml-auto mr-2">
-												({value.angle}°)
+												({directionData.angle}°)
 											</span>
 										</DropdownMenu.Item>
 									))

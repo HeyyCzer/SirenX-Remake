@@ -8,6 +8,7 @@ const defaultLightModel = {
 	direction: DeltaEnum.FRONT.delta,
 	multiples: 1,
 	intensity: 3.50000000,
+	scaleFactor: 100
 }
 
 const defaultCarcolsLightModel = {
