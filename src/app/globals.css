@@ -60,3 +60,15 @@ kbd > kbd {
 .text-gradient-primary {
 	@apply bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent;
 }
+
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-500/50 rounded-lg;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-gray-500/20 rounded-lg px-1;
+}
+
+::-webkit-scrollbar {
+	@apply w-[8px] h-[8px];
+}

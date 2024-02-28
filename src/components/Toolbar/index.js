@@ -153,7 +153,7 @@ export default function Toolbar() {
 	}, [dispatch]);
 
 	return (
-		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full max-w-[300px] rounded-xl drop-shadow-lg px-6 pb-6">
+		<aside id="toolbar" className="flex flex-col gap-y-5 mt-14 bg-slate-900 w-full min-w-[250px] max-w-[300px] rounded-xl drop-shadow-lg px-6 pb-6">
 			<input type="file" ref={hiddenFileInput} className="hidden" accept=".meta" onChange={ handleFileUpload } />
 
 			<div className="flex justify-center py-6 text-white uppercase font-medium">

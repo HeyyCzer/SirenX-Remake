@@ -21,14 +21,14 @@ export default function LightsEditor() {
 	}, [bpm]);
 
 	return (
-		<main className="flex flex-col gap-y-6 w-fit mx-auto">
+		<main className="flex flex-col gap-y-6 w-fit mx-auto overflow-x-auto">
 			<Link href="/" className="text-2xl text-white font-bold upper w-fit">
 				Siren
 				<span className="text-gradient-primary">X</span>
 			</Link>
 
 			{/* Preview bar */}
-			<div>
+			<div className="w-[inherit]">
 				<div>
 					<h2 className="text-gray-300/60 uppercase text-xs tracking-[2px] font-light text-center">Preview</h2>
 				</div>
@@ -44,8 +44,8 @@ export default function LightsEditor() {
 				<hr className="border-gray-300/30 w-1/2 mx-auto mt-2" />
 			</div>
 
-			<div>
-				<div className={twMerge(`flex gap-x-1 justify-around rounded-lg px-1`)}>
+			<div className="w-[inherit]">
+				<div className={twMerge(`flex gap-x-1 justify-around rounded-lg px-1 w-[inherit]`)}>
 					{
 						Array.from({ length: totalColumns.value })
 							.map((_, columnIndex) => (
@@ -56,7 +56,7 @@ export default function LightsEditor() {
 				{
 					Array.from({ length: 32 })
 						.map((_, rowIndex) => (
-							<div className={twMerge(`flex gap-x-1 rounded-lg px-1`, rowIndex === currentRow && "bg-white/10")} key={rowIndex}>
+							<div className={twMerge(`flex gap-x-1 rounded-lg px-1 w-[inherit]`, rowIndex === currentRow && "bg-white/10")} key={rowIndex}>
 								{Array.from({ length: totalColumns.value }, (_, i) => i).map((_, columnIndex) => (
 									<Light key={`${rowIndex}-${columnIndex}`} row={rowIndex} column={columnIndex} current={rowIndex === currentRow} />
 								))}

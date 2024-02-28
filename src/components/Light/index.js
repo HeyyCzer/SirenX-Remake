@@ -35,7 +35,7 @@ export default function Light({ current = false, disabled = false, row, column }
 
 	return (
 		<button
-			className={twMerge(`group flex items-center justify-center h-5 w-8 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`, color !== "none" && Colors[color]?.editor?.default, current && color !== "none" && Colors[color]?.editor?.current)}
+			className={twMerge(`group flex items-center justify-center h-6 lg:w-8 w-9 lg:h-5 bg-gray-200/20 outline-none rounded-md my-1 text-xs text-gray-300/50 font-semibold`, color !== "none" && Colors[color]?.editor?.default, current && color !== "none" && Colors[color]?.editor?.current)}
 			disabled={disabled}
 			onMouseDown={(e) => {
 				e.preventDefault();

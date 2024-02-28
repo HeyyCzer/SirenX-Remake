@@ -113,7 +113,7 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 	return (
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild>
-				<button className="text-gray-400" id={`settings-dropdown-${columnIndex}`}>
+				<button className="text-gray-400 text-xs sm:text-sm w-9 lg:w-8" id={`settings-dropdown-${columnIndex}`}>
 					<FontAwesomeIcon icon={faGear} />
 				</button>
 			</DropdownMenu.Trigger>
