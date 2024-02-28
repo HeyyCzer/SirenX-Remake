@@ -36,7 +36,7 @@ export default function LightsEditor() {
 					{
 						Array.from({ length: totalColumns.value })
 							.map((_, columnIndex) => (
-								<Light current={true} key={`preview-${columnIndex}`} disabled row={currentRow} column={columnIndex} />
+								<Light isPreview isCurrent key={`preview-${columnIndex}`} disabled row={currentRow} column={columnIndex} />
 							))
 					}
 				</div>
@@ -58,7 +58,7 @@ export default function LightsEditor() {
 						.map((_, rowIndex) => (
 							<div className={twMerge(`flex gap-x-1 rounded-lg px-1 w-[inherit]`, rowIndex === currentRow && "bg-white/10")} key={rowIndex}>
 								{Array.from({ length: totalColumns.value }, (_, i) => i).map((_, columnIndex) => (
-									<Light key={`${rowIndex}-${columnIndex}`} row={rowIndex} column={columnIndex} current={rowIndex === currentRow} />
+									<Light key={`${rowIndex}-${columnIndex}`} row={rowIndex} column={columnIndex} isCurrent={rowIndex === currentRow} />
 								))}
 							</div>
 						))
