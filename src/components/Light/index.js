@@ -35,7 +35,7 @@ export default function Light({ isPreview = false, isCurrent = false, disabled =
 
 	const light = lights?.[row]?.[column];
 	const color = light?.color || "none";
-	const angle = Object.values(DeltaEnum).find(d => d.delta === light.direction)?.angle;
+	const angle = Object.values(DeltaEnum).find(d => d.delta === light?.direction)?.angle;
 
 	return (
 		<button

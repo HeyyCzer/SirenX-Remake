@@ -1,3 +1,4 @@
+import DeltaEnum from "@/enum/direction.enum";
 import Colors from "@/lib/colors";
 import { defaultCarcolsLightModel, defaultLightModel } from "@/lib/reducers/editor.reducer";
 import { binaryToDecimal, decimalToBinary } from "@/utils/binary";
@@ -99,7 +100,7 @@ const exportLights = (editor, settings) => {
 			sequencer[columnIndex] += (light?.color !== "none" ? "1" : "0");
 			if (light?.color === "none" && sequencer[columnIndex].includes("1")) continue;
 
-			columnData.flashiness.delta.$.value = light.direction;
+			columnData.flashiness.delta.$.value = light?.direction ?? DeltaEnum.FRONT.delta;
 			columnData.flashiness.multiples.$.value = light.multiples;
 			columnData.intensity.$.value = light.intensity;
 			columnData.scaleFactor.$.value = light.scaleFactor;
