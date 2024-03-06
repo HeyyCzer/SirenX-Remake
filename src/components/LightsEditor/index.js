@@ -36,7 +36,7 @@ export default function LightsEditor() {
 					{
 						Array.from({ length: totalColumns.value })
 							.map((_, columnIndex) => (
-								<Light isPreview isCurrent key={`preview-${columnIndex}`} disabled row={currentRow} column={columnIndex} />
+								<Light isCurrent key={`preview-${columnIndex}`} disabled row={currentRow} column={columnIndex} />
 							))
 					}
 				</div>

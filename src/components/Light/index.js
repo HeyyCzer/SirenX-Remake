@@ -22,7 +22,7 @@ function getRow(number) {
 	return column;
 }
 
-export default function Light({ isPreview = false, isCurrent = false, disabled = false, row, column }) {
+export default function Light({ isCurrent = false, disabled = false, row, column }) {
 	const dispatch = useAppDispatch();
 
 	const { selectedColor, lights } = useAppSelector((state) => state.editor);
