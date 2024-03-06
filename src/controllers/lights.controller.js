@@ -51,7 +51,7 @@ const buildLights = (sirenSelected, fullFile) => {
 	return {
 		bpm: sirenSelected.sequencerBpm.$.value,
 		id: sirenSelected.id.$.value,
-		name: sirenSelected.name._text,
+		name: sirenSelected.name?._text ?? "SirenX-GeneratedCarcols",
 		file: fullFile,
 		lights: builtSirens,
 	};
