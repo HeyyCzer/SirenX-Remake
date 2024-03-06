@@ -8,7 +8,6 @@ import { xml2json } from 'xml-js';
 
 const uploadFile = async (fileContent) => {
 	const json = JSON.parse(xml2json(fileContent, { compact: true, attributesKey: "$" }));
-	console.log(json);
 	let sirens = json?.CVehicleModelInfoVarGlobal?.Sirens.Item;
 	if (!sirens) {
 		return Modal.fire({
