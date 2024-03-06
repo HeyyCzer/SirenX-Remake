@@ -4,6 +4,7 @@ import Colors from "@/lib/colors";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { setCurrentBpm, setSelectedColor, setUploadData, updateLights } from "@/lib/reducers/editor.reducer";
 import { updateSettings } from "@/lib/reducers/settings.reducer";
+import { STORE_KEY } from "@/lib/store";
 import { Modal } from "@/utils/modal";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -139,7 +140,7 @@ export default function Toolbar() {
 				timer: 1500,
 				timerProgressBar: true,
 			}).then(() => {
-				localStorage.removeItem("SirenX/editor");
+				localStorage.removeItem(`${STORE_KEY}editor`);
 				window.location.reload();
 			})
 		});

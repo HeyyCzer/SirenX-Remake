@@ -4,8 +4,11 @@ import editorSlice from "./reducers/editor.reducer";
 import settingsSlice from "./reducers/settings.reducer";
 import tutorialSlice from "./reducers/tutorial.reducer";
 
+const STORE_KEY = "SirenX//";
+export { STORE_KEY };
+
 export const makeStore = () => {
-	const preloadedEditor = typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`SirenX/editor`)) ?? undefined) : undefined;
+	const preloadedEditor = typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`${STORE_KEY}editor`)) ?? undefined) : undefined;
 	if (preloadedEditor && Object.keys(preloadedEditor?.lights ?? {})?.length > 0) {
 		for (const row of Object.values(preloadedEditor.lights) ?? {}) {
 			for (const item of Object.values(row) ?? {}) {
@@ -24,15 +27,15 @@ export const makeStore = () => {
 		},
 		preloadedState: {
 			editor: preloadedEditor ?? undefined,
-			tutorial: typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`SirenX/tutorial`)) ?? undefined) : undefined,
+			tutorial: typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`${STORE_KEY}tutorial`)) ?? undefined) : undefined,
 		}
 	});
 
 	store.subscribe(() => {
 		const state = store.getState();
 		if (typeof window !== 'undefined') {
-			localStorage.setItem(`SirenX/editor`, JSON.stringify(state.editor));
-			localStorage.setItem(`SirenX/tutorial`, JSON.stringify(state.tutorial));
+			localStorage.setItem(`${STORE_KEY}editor`, JSON.stringify(state.editor));
+			localStorage.setItem(`${STORE_KEY}tutorial`, JSON.stringify(state.tutorial));
 		}
 	});
 
