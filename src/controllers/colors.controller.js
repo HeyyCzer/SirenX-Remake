@@ -73,6 +73,16 @@ const createColor = (carcolsColor) => {
 		}
 	};
 
+	// Make custom colors the first ones, so they can be easily found, and sort the custom colors by name.
+	const customColors = Object.entries(Colors).filter(([color]) => color.includes("CUSTOM"));
+	const sortedColors = Object.entries(Colors).filter(([color]) => !color.includes("CUSTOM")).sort(([a], [b]) => a.localeCompare(b));
+	const newColors = Object.fromEntries([...customColors, ...sortedColors]);
+	for (const index in newColors) {
+		delete Colors[index];
+	}
+
+	Object.assign(Colors, newColors);
+
 	return key;
 }
 
