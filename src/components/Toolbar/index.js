@@ -87,16 +87,28 @@ export default function Toolbar() {
 			},
 			inputValue: sirenId,
 			inputPlaceholder: "Siren ID",
+			showCancelButton: true,
+			preConfirm: (newSirenId) => {
+				if (!newSirenId)
+					return Modal.showValidationMessage(`Please, enter a Siren ID.`);
+				return newSirenId;
+			}
 		}).then(({ isConfirmed, value: newSirenId }) => {
-			if (!isConfirmed) return;
+			if (!isConfirmed || !newSirenId) return;
 			
 			Modal.fire({
 				title: "Enter the Siren Name",
 				input: "text",
 				inputValue: sirenName,
 				inputPlaceholder: "Siren name",
+				showCancelButton: true,
+				preConfirm: (newSirenName) => {
+					if (!newSirenName)
+						return Modal.showValidationMessage(`Please, enter a Siren Name.`);
+					return newSirenName;
+				}
 			}).then(({ isConfirmed, value: newSirenName }) => {
-				if (!isConfirmed) return;
+				if (!isConfirmed || !newSirenName) return;
 			
 				const [fileContent, jsonFileContent] = downloadFile({
 					sirenId,
