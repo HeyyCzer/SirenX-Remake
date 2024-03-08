@@ -1,5 +1,5 @@
+import DefaultCarcols from "@/default_carcols.json";
 import DeltaEnum from "@/enum/direction.enum";
-import DefaultCarcols from "/public/default_carcols.json";
 
 const { createSlice } = require("@reduxjs/toolkit")
 
