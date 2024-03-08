@@ -19,7 +19,7 @@ const uploadFile = async (fileContent) => {
 	}
 
 	const json = JSON.parse(xmlJson);
-	let sirens = json?.CVehicleModelInfoVarGlobal?.Sirens.Item;
+	let sirens = json?.CVehicleModelInfoVarGlobal?.Sirens?.Item;
 	if (!sirens) {
 		return Modal.fire({
 			icon: 'error',
