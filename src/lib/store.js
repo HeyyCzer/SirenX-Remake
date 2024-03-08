@@ -1,5 +1,6 @@
 import { createColor } from "@/controllers/colors.controller";
 import { configureStore } from "@reduxjs/toolkit";
+import * as Sentry from "@sentry/react";
 import editorSlice from "./reducers/editor.reducer";
 import settingsSlice from "./reducers/settings.reducer";
 import tutorialSlice from "./reducers/tutorial.reducer";
@@ -8,6 +9,10 @@ const STORE_KEY = "SirenX//";
 export { STORE_KEY };
 
 export const makeStore = () => {
+	const sentryReduxEnhancer = Sentry.createReduxEnhancer({
+		// Optionally pass options listed below
+	});
+
 	const preloadedEditor = typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`${STORE_KEY}editor`)) ?? undefined) : undefined;
 	if (preloadedEditor && Object.keys(preloadedEditor?.lights ?? {})?.length > 0) {
 		for (const row of Object.values(preloadedEditor.lights) ?? {}) {
@@ -28,7 +33,10 @@ export const makeStore = () => {
 		preloadedState: {
 			editor: preloadedEditor ?? undefined,
 			tutorial: typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem(`${STORE_KEY}tutorial`)) ?? undefined) : undefined,
-		}
+		},
+		enhancers: (getDefaultEnhancers) => {
+			return getDefaultEnhancers().concat(sentryReduxEnhancer);
+		},
 	});
 
 	store.subscribe(() => {
