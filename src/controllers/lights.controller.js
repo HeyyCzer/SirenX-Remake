@@ -68,7 +68,16 @@ const exportLights = (editor, settings) => {
 	}
 
 	siren.id.$.value = editor.newSirenId;
+	if (!siren.name) {
+		siren.name = {};
+	}
 	siren.name._text = editor.newSirenName;
+	if (!siren.sequencerBpm?.$) {
+		if (!siren.sequencerBpm) {
+			siren.sequencerBpm = {};
+		}
+		siren.sequencerBpm.$ = {};
+	}
 	siren.sequencerBpm.$.value = editor.bpm;
 
 	let sequencer = {};

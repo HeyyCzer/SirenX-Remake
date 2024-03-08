@@ -32,6 +32,9 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 
 			const tempLights = JSON.parse(JSON.stringify(lights));
 			for (const row of Object.values(tempLights)) {
+				if (!row[columnIndex]) {
+					row[columnIndex] = defaultLightModel;
+				}
 				row[columnIndex].intensity = value;
 			}
 			dispatch(updateLights(tempLights));
@@ -77,6 +80,9 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 
 		const tempLights = JSON.parse(JSON.stringify(lights));
 		for (const row of Object.values(tempLights)) {
+			if (!row[columnIndex]) {
+				row[columnIndex] = defaultLightModel;
+			}
 			row[columnIndex].scaleFactor = scaleFactor;
 		}
 		dispatch(updateLights(tempLights));
@@ -105,6 +111,9 @@ const ColumnSettingsDropdown = ({ columnIndex }) => {
 
 		const tempLights = JSON.parse(JSON.stringify(lights));
 		for (const row of Object.values(tempLights)) {
+			if (!row[columnIndex]) {
+				row[columnIndex] = defaultLightModel;
+			}
 			row[columnIndex].direction = delta;
 		}
 		dispatch(updateLights(tempLights));

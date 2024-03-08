@@ -37,7 +37,7 @@ const uploadFile = async (fileContent) => {
 	if (sirens.length === 1) {
 		selectedSiren = sirens[0];
 	} else {
-		const sirenOptions = sirens.reduce((acc, siren) => ({ ...acc, [siren.id.$.value]: `${siren.name._text} (ID: ${siren.id.$.value})` }), {});
+		const sirenOptions = sirens.reduce((acc, siren) => ({ ...acc, [siren.id.$.value]: `${siren?.name?._text || "NO-NAME"} (ID: ${siren.id.$.value})` }), {});
 		await Modal.fire({
 			title: 'Select a siren to edit',
 			text: 'The selected file contains multiple sirens. Please select one to continue.',
