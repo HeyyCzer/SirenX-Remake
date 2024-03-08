@@ -7,7 +7,18 @@ import { getRandomInt } from '@/utils/random';
 import { xml2json } from 'xml-js';
 
 const uploadFile = async (fileContent) => {
-	const json = JSON.parse(xml2json(fileContent, { compact: true, attributesKey: "$" }));
+	let xmlJson = null;
+	try {
+		xmlJson = xml2json(fileContent, { compact: true, attributesKey: "$" });
+	} catch (err) {
+		return Modal.fire({
+			icon: 'error',
+			title: 'Error',
+			text: 'The file provided is not a valid XML file. Please, check the file and try again'
+		});
+	}
+
+	const json = JSON.parse(xmlJson);
 	let sirens = json?.CVehicleModelInfoVarGlobal?.Sirens.Item;
 	if (!sirens) {
 		return Modal.fire({
