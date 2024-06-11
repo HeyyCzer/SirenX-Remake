@@ -8,6 +8,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import dynamic from "next/dynamic";
+import Script from "next/script";
 config.autoAddCss = false;
 
 const DarkReaderAPI = dynamic(() => import('@/components/DarkReaderAPI'), { ssr: false });
@@ -37,6 +38,13 @@ export default function RootLayout({ children }) {
 			<body className="dark bg-slate-950">
 				<DarkReaderAPI />
 				<GoogleAnalytics />
+
+				<Script
+					async
+					src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+					strategy="lazyOnload"
+					crossOrigin="anonymous"
+				/>
 
 				{children}
 
