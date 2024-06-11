@@ -10,8 +10,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import dynamic from "next/dynamic";
 config.autoAddCss = false;
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
 const DarkReaderAPI = dynamic(() => import('@/components/DarkReaderAPI'), { ssr: false });
 
 export const metadata = {
@@ -37,7 +35,6 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className="dark bg-slate-950">
-				<SpeedInsights />
 				<DarkReaderAPI />
 				<GoogleAnalytics />
 
