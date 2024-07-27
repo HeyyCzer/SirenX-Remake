@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import "./fonts.css";
@@ -35,6 +36,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<Head>
+				<script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID}`} crossorigin="anonymous"></script>
+			</Head>
+
 			<body className="dark bg-slate-950">
 				<DarkReaderAPI />
 				<GoogleAnalytics />
